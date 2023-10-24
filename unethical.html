@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    $(document).ready(function () {
+        var ErrorMsg = "";
+        var ResultMsg = "";
+        if (ErrorMsg != "") {
+            alert(ErrorMsg);
+            history.back(-1);
+        }
+        if (ResultMsg != "") alert(ResultMsg);
+
+
+        $("#tabCompanyEthicReport").addClass("on");
+    });
+</script>
+<script>
+
+    function fnSave() {
+        var frm = document.report_form;
+
+        if (!document.getElementById("agree").checked) {
+            alert("개인정보 취급방침에 동의해 주시기 바랍니다.");
+            return;
+        }
+
+        //var gubunVal = $('input:radio[name="rbtn_gubun"]:checked').val();
+        var gubunVal = "제보";
+        var sexVal = $('input:radio[name="rbtn_sex"]:checked').val();
+        var hanmiYnVal = $('input:radio[name="rbtn_hanmi_yn"]:checked').val();
+        var openFlagVal = $('input:radio[name="rbtn_open_flag"]:checked').val();
+
+        frm.gubun.value = gubunVal;
+        frm.sex.value = sexVal;
+        frm.hanmiyn.value = hanmiYnVal;
+        frm.openflag.value = openFlagVal;
+
+        /*
+        if(frm.gubun.value == "undefined") {
+            alert("구분을 선택하여 주십시오.");
+            frm.gubun.focus();
+            return;
+        }
+        */
+        if (frm.cust_name.value.replace(/^\s+|\s+$/g, "").length == 0) {
+            alert("이름을 입력하십시오.");
+            frm.cust_name.focus();
+            return;
+        }
+
+        if (frm.hp_num.value.replace(/^\s+|\s+$/g, "").length == 0 && !frm.anonym.checked) {
+            alert("휴대폰 번호를 입력하십시오.");
+            frm.hp_num.focus();
+            return;
+        }
+
+        if (frm.hp_num1.value.replace(/^\s+|\s+$/g, "").length == 0 && !frm.anonym.checked) {
+            alert("휴대폰 번호를 입력하십시오.");
+            frm.hp_num1.focus();
+            return;
+        }
+
+        if (frm.hp_num2.value.replace(/^\s+|\s+$/g, "").length == 0 && !frm.anonym.checked) {
+            alert("휴대폰 번호를 입력하십시오.");
+            frm.hp_num2.focus();
+            return;
+        }
+        /*
+        if(frm.sex.value == "undefined") {
+            alert("성별을 선택하여 주십시오.");
+            frm.sex.focus();
+            return;
+        }
+        */
+        var email = frm.email_id.value + "@" + frm.email_host.value;
+        if (valid_email(email) == false) {
+            alert("이메일 주소가 잘못되었습니다.");
+            frm.email_id.focus();
+            return;
+        }
+
+        if (frm.subject.value.replace(/^\s+|\s+$/g, "").length == 0) {
+            alert("제목을 입력하십시오.");
+            frm.subject.focus();
+            return;
+        }
+
+        if (frm.contents.value.replace(/^\s+|\s+$/g, "").length == 0) {
+            alert("내용을 입력하십시오.");
+            frm.contents.focus();
+            return;
+        }
+        /*
+        if(frm.hanmiyn.value == "undefined") {
+            alert("사원여부를 선택하여 주십시오.");
+            frm.hanmiyn.focus();
+            return;
+        }
+        
+        if(frm.openflag.value == "undefined") {
+            alert("비밀유지 여부를 선택하여 주십시오.");
+            frm.openflag.focus();
+            return;
+        }
+        */
+        if (!confirm("저장하시겠습니까?"))
+            return;
+
+        // 신성재(메일)
+        //		frm.action = "https://www.hanmi.co.kr/hanmi/handler/Company-RegInquiryOk";
+        //		frm.action = "/hanmi/handler/Company-RegInquiryOk_test";
+
+        frm.action = "C:/ESG/job-portal-website-template/unethical.html";
+        //		frm.action = "/hanmi/handler/Company-SendMail";
+        frm.target = "_self";
+        frm.submit();
+    }
+
+    function valid_email(v) {
+        var format = /^((\w|[\-\.])+)@((\w|[\-\.])+)\.([A-Za-z]+)$/;
+        return format.test(v);
+    }
+
+    function email_select_change(v) {
+        var frm = document.report_form;
+
+        frm.email_host.value = v;
+        if (v == "")
+            frm.email_host.readOnly = false;
+        else
+            frm.email_host.readOnly = true;
+    }
+
+    function cancel() {
+        if (!confirm("취소 하시겠습니까?")) return;
+
+        //		history.back(-1);
+        location.href = "../index.html";
+    }
+
+    // 익명여부
+    function fnChgChkbox() {
+        var frm = document.report_form;
+
+        if (frm.anonym.checked) {
+            frm.cust_name.value = "익명";
+            frm.cust_name.readOnly = true;
+            document.all.hpTr.style.display = "none";
+        } else {
+            frm.cust_name.value = "";
+            frm.cust_name.readOnly = false;
+            document.all.hpTr.style.display = "";
+        }
+    }
+
+</script>
+
+<head>
+    <meta charset="utf-8" />
+    <title>컴앤프로정보기술(주)</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+            <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+                <img class="img-fluid" src="img/mini.PNG" style="width: 50px;">
+                <h1 class="m-0 text-primary">컴앤프로정보기술</h1>
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="index.html" class="nav-item nav-link">홈</a>
+                    <a href="about.html" class="nav-item nav-link">회사소개</a>
+                    <div class="nav-item dropdown">
+                        <!-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">드롭다운2개</a> -->
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="job-list.html" class="dropdown-item">Job List</a>
+                            <a href="job-detail.html" class="dropdown-item">Job Detail</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">ESG경영</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="environment.html" class="dropdown-item">환경경영</a>
+                            <a href="testimonial.html" class="dropdown-item">안전보건경영</a>
+                            <a href="society.html" class="dropdown-item">사회공헌</a>
+                            <a href="ethics.html" class="dropdown-item">윤리경영</a>
+                            <a href="human_rights.html" class="dropdown-item">인권경영</a>
+                            <a href="unethical.html" class="dropdown-item">비윤리적 이슈 제보</a>
+                            <a href="esg_public.html" class="dropdown-item">ESG 정보공개방</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">CONTACT</a>
+                </div>
+                <!-- <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Post A Job<i class="fa fa-arrow-right ms-3"></i></a> -->
+            </div>
+        </nav>
+        <!-- Navbar End -->
+
+
+        <!-- Header End -->
+        <div class="container-xxl py-5 bg-dark page-header mb-5">
+            <div class="container my-5 pt-5 pb-4">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">비윤리적 이슈 제보</h1>
+                <!-- <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb text-uppercase">
+                        <li class="breadcrumb-item"><a href="#">홈</a></li>
+                        <li class="breadcrumb-item"><a href="#">페이지</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">비윤리적 이슈 제보</li>
+                    </ol>
+                </nav> -->
+            </div>
+        </div>
+        <!-- Header End -->
+
+
+        <!-- 404 Start -->
+        <div class="container-xxl py-5" style="width: 75%; font-size:small">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <!-- <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="row g-0 about-bg rounded overflow-hidden">
+                           
+                                <img class="img-fluid w-100" src="img/images3.jpg">
+                    
+                        
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <h1 class="mb-4">기업윤리규범</h1>
+                        <p class="mb-4">컴앤프로정보기술은 윤리경영을 실천함으로써 <br> 구성원과 고객, 사회로부터 신뢰받는 회사를 만들어 갑니다.
+                        </p>
+                        <p><i class="fa fa-check text-primary me-3"></i>임직원의 기본윤리</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>고객에 대한 책임</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>협력업체와의 관계</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>사회에 대한 책임</p>
+                    </div> -->
+                    <!-- <div class="col-lg-12 wow fadeIn" data-wow-delay="0.5s">
+                        <h1 class="mb-4">윤리경영</h1>
+                        <p class="mb-4">공정한 경쟁과 투명한 거래질서 확립을 통해<br />사회적 책임을 수행하는 최선을 다하고 있습니다.</p>
+                    </div> -->
+                    <div class="title_company">
+                        <div class="hgroup">
+                            <h3 class="h3_4">기업 윤리경영</h3>
+                            <p class="p_9">공정한 경쟁과 <em>투명한 거래질서 확립</em>을 통해 <em>사회적 책임</em>을 수행하는데 최선을 다하고 있습니다.</p>
+                        </div>
+                        <div class="topimg topimg_company"></div>
+                    </div>
+                    <h4 class="custom">제보하기</h4>
+                    <p class="pdb30">공정거래에 대하여 평소 궁금해 하시던 사항이나 거래의 공정성 여부에 대하여 딜레마에 처하신 경우를 말씀해 주시면, 빠른 시일 내에 귀하의
+                        E-mail이나 전화를 통해 답변해 드리도록 하겠습니다.</p>
+                    <h5>이용안내</h5>
+                    <p class="pdb30">회사 및 임직원의 윤리경영에 반하는 비윤리적인 행위에 대한 제보를 받고 있으며 제보자에 대한 비밀은 절대적으로 보호됩니다. 제보 내용은 최대한 빠른
+                        시일 내에 처리하여 그 결과를 제보자가 원하는 방법으로 회신해 드립니다.</p>
+                    <h5>신고대상</h5>
+                    <ul class="pdb30">
+                        <li style="margin-left: 20px;"> 직무와 관련하여 이해관계자로부터 금품 또는 향응 등을 수수하는 행위</li>
+                        <li style="margin-left: 20px;"> 직위를 이용하여 부당한 이득을 얻거나 부정한 수단이나 의도를 가지고 손해를 끼친 행위</li>
+                        <li style="margin-left: 20px;"> 회사자산 및 정보를 부적절하게 사용하거나 부당한 이득을 취하는 행위</li>
+                        <li style="margin-left: 20px;"> 회사 및 임직원의 관련법령(약사법, 청탁금지법, 공정거래법 등) 위반 행위</li>
+                        <li style="margin-left: 20px;"> 기타 이해관계자와 관련된 비윤리적 행위 등</li>
+                    </ul>
+                    <h5>신고자 보호 원칙</h5>
+                    <ul class="pdb30">
+                        <li style="margin-left: 20px;"> 비밀보장 : 제보자 동의 없이 제보자의 신분공개 또는 암시행위 금지</li>
+                        <li style="margin-left: 20px;"> 신분보장 : 제보 및 자료제출 등의 이유로 불이익이나 차별에 대해 보호</li>
+                        <li style="margin-left: 20px;"> 책임감면 : 제보와 관련 제보자의 과실 발견 시 해당 제보자에 대한 징계 감면</li>
+                    </ul>
+                    <h5>처리절차</h5>
+                    <img src="./img/Processingprocedure.jpg" alt="1.제보하기 | 2.접수완료(자율준수관리자) | 3.관련부서확인 | 4.처리완료"
+                        class="pdb30 processImg">
+                    <ol class="processText">
+                        <li style="margin-left: 20px;">제보하기</li>
+                        <li style="margin-left: 20px;">접수완료(자율준수관리자)</li>
+                        <li style="margin-left: 20px;">관련부서확인</li>
+                        <li style="margin-left: 20px;">처리완료</li>
+                    </ol>
+                    <!-- 개인정보 수집 동의 start-->
+                    <h5>개인정보수집 동의</h5>
+                    <fieldset style="display: flex; flex-direction:column; align-items:center">
+                        <div class="agreement" style="border: 1px solid;">
+                            <div class="privacy_info_box" style="display: flex; flex-direction:column; justify-content:center; align-items:flex-start">
+                                <p style="margin: 1% 2.5%;">컴앤프로정보기술은 귀하의 문의에 대한 처리 및 회신을 위하여 귀하의 개인정보를 수집 및 처리하고자 합니다. 내용을 자세히 읽으신 후 동의여부를 결정하여
+                                    주시기 바랍니다. </p>
+                                <h6 style="margin: 1% 2.5%;">개인정보 수집&#8226;이용 내역</h6>
+                                <table style="border: 1px solid black; border-collapse : collapse; width: 95%; margin: 1% 2.5%">
+                                    <colgroup>
+                                        <col style="width:25%">
+                                        <col style="width:25%">
+                                        <col style="width:50%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr style="background-color: #545454; color: #ffffff">
+                                            <th scope="col" style="text-align: center;border: 1px solid black; border-collapse : collapse;">항목</th>
+                                            <th scope="col" style="text-align: center;border: 1px solid black; border-collapse : collapse;">수집&#8226;이용 목적</th>
+                                            <th scope="col" style="text-align: center;border: 1px solid black; border-collapse : collapse;">보유기간</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td align="center" style="border: 1px solid black; border-collapse : collapse;">(필수항목)<br>성명, 이메일, 전화번호</td>
+                                            <td align="center" style="border: 1px solid black; border-collapse : collapse;">컴앤프로정보기술 윤리경영<br>신고/상담 처리 및 회신</td>
+                                            <td class="emp" style="border: 1px solid black; border-collapse : collapse;">보유기간 : 개인정보 수집 및 이용목적이 달성된 후에는 해당<br>정보를 지체없이 파기합니다.
+                                                <br>*단,타 법령에 의해 보존의무가 있는 경우 법령이 지정한 기간 동안 보존합니다.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div align="center">
+                            <p><br>귀하는 위의 개인정보 수집&#8226;이용에 대한 동의를 거부할 권리가 있으며, 동의를 거부하는 경우 문의내용을 등록할 수 없습니다.
+                                <br>위와 같이 개인정보를 수집&#8226;이용하는데 동의하십니까?<br>
+                            </p>
+
+                        </div>
+                        <div class="check_agree">
+                            <input type="radio" id="agree" name="agree_yn">
+                            <label for="agree" class="pdr30" style="font-weight: 900; font-size:0.8rem">동의합니다.</label>
+                            <label for="disagree"  style="font-weight: 900; font-size:0.8rem">
+                                <input type="radio" id="disagree" name="agree_yn">동의하지 않습니다.</label>
+                        </div>
+                    </fieldset>
+                    <!--//개인정보 수집 동의 end-->
+                    <!-- 신고상담-->
+                    <form name="report_form" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="gubun" />
+                        <input type="hidden" name="sex" />
+                        <input type="hidden" name="hanmiyn" />
+                        <input type="hidden" name="openflag" />
+                        <input type="hidden" name="redirectURL"
+                            value="https://www.hanmi.co.kr/hanmi/handler/Csr-EthicReport" />
+                        <fieldset>
+                            <legend>제보 작성</legend>
+                            <p class="board_write_tip"><img src="./img/bul_essentials.gif" alt="" />표시는 필수 입력 항목
+                                입니다.</p>
+                            <table class="board_write">
+                                <tr>
+                                    <th scope="row"><img src="./img/bul_essentials.gif" alt="" />이름</th>
+                                    <td>
+                                        <input type="text" title="이름입력" name="cust_name">&nbsp;&nbsp;
+                                        <input type="checkbox" id="anonym" name="anonym" onchange="fnChgChkbox()">
+                                        <label for="checkbox">익명</label>
+                                    </td>
+                                </tr>
+                                <tr class="policy_tbl" id="hpTr">
+                                    <th scope="row"><img src="./img/bul_essentials.gif" alt="" />휴대폰</th>
+                                    <td class="hp">
+                                        <input type="text" title="핸드폰 중간자리 입력" name="hp_num">
+                                        -
+                                        <input type="text" title="핸드폰 중간자리 입력" name="hp_num1">
+                                        -
+                                        <input type="text" title="핸드폰 뒷자리 입력" name="hp_num2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><img src="./img/bul_essentials.gif" alt="" />이메일</th>
+                                    <td class="email"><input type="text" title="이메일 아이디 입력" class="e_id"
+                                            name="email_id">
+                                        @
+                                        <input type="text" title="이메일 도메인 입력" class="e_domain" name="email_host">
+                                        <select name="select" id="select" onchange="email_select_change(this.value)">
+                                            <option value="">직접입력</option>
+                                            <option value="naver.com">네이버</option>
+                                            <option value="hanmail.net">다음</option>
+                                            <option value="gmail.com">지메일</option>
+                                            <option value="hotmail.com">핫메일</option>
+                                            <option value="yahoo.co.kr">야후 코리아</option>
+                                            <option value="yahoo.com">야후</option>
+                                            <option value="lycos.co.kr">라이코스 코리아</option>
+                                            <option value="lycos.com">라이코스</option>
+                                            <option value="chollian.net">천리안</option>
+                                            <option value="netian.com">네띠앙</option>
+                                            <option value="unitel.co.kr">유니텔</option>
+                                            <option value="dreamwiz.com">드림위즈</option>
+                                            <option value="netsgo.com">넷츠고</option>
+                                            <option value="orgio.net">오르지오</option>
+                                            <option value="dreamx.net">드림엑스</option>
+                                            <option value="kornet.net">코넷</option>
+                                            <option value="korea.com">코리아닷컴</option>
+                                            <option value="hanmir.com">한미르</option>
+                                            <option value="paran.com">파란</option>                                          
+                                            <option value="empal.com">엠팔</option>
+                                            <option value="freechal.com">프리챌</option>                                          
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><img src="./img/bul_essentials.gif" alt="" />제목</th>
+                                    <td><input type="text" title="제목입력" style="width:100%;" name="subject"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><img src="./img/bul_essentials.gif" alt="" />내용</th>
+                                    <td><textarea style="width:100%;" title="내용입력" name="contents"></textarea></td>
+                                </tr>
+                                <tr class="policy_tbl">
+                                    <th scope="row">첨부</th>
+                                    <td><input type="file" style="width:100%" name="file_nm"></td>
+                                </tr>
+                            </table>
+                            <div style="display: flex; justify-content: center;margin:10px">
+                                <button type="button" onclick="fnSave()" style="margin-right: 10px;">문의</button>
+                                <button type="button" onclick="cancel()">취소</button>
+                            </div>
+                        </fieldset>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 404 End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">컴앤프로정보기술</h5>
+                    <a class="btn btn-link text-white-50" href="about.html">회사소개</a>
+                    <a class="btn btn-link text-white-50" href="">Contact Us</a>
+                    <a class="btn btn-link text-white-50" href="">Our Services</a>
+                    <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                    <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+
+                    <!--     <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto p-4 p-lg-0">
+                        <a href="index.html" class="nav-item nav-link">홈</a>
+                        <a href="about.html" class="nav-item nav-link active">회사소개</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">드롭다운2개</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="job-list.html" class="dropdown-item">Job List</a>
+                                <a href="job-detail.html" class="dropdown-item">Job Detail</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">ESG경영</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="environment.html" class="dropdown-item">환경경영</a>
+                                <a href="testimonial.html" class="dropdown-item">안전보건경영</a>
+                                <a href="society.html" class="dropdown-item">사회공헌</a>
+                                <a href="society.html" class="dropdown-item">준법경영</a>
+                                <a href="society.html" class="dropdown-item">인권경영</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
+                </div> -->
+
+
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">ESG경영</h5>
+                    <a class="btn btn-link text-white-50" href="environment.html">환경경영</a>
+                    <a class="btn btn-link text-white-50" href="testimonial.html">안전보건경영</a>
+                    <a class="btn btn-link text-white-50" href="society.html">사회공헌</a>
+                    <a class="btn btn-link text-white-50" href="ethics.html">윤리경영</a>
+                    <a class="btn btn-link text-white-50" href="human_rights.html">인권경영</a>
+                    <a class="btn btn-link text-white-50" href="unethical.html">비윤리적 이슈 제보</a>
+                    <a class="btn btn-link text-white-50" href="esg_public.html">ESG 정보공개방</a>
+
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Contact</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>경기 성남시 수정구 창업로40번길 30 346호</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>031-751-3692</p>
+                    <p class="mb-2"><i class="fa fa-fax me-3"></i>031-751-3694</p>
+                    <!-- <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p> -->
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <!--    <div class="col-lg-3 col-md-6">
+                <h5 class="text-white mb-4">Newsletter</h5>
+                <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                <div class="position-relative mx-auto" style="max-width: 400px;">
+                    <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                </div>
+            </div> -->
+            </div>
+        </div>
+        <!--    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved. 
+                    
+                    /*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/
+                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-menu">
+                        <a href="">Home</a>
+                        <a href="">Cookies</a>
+                        <a href="">Help</a>
+                        <a href="">FQAs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    </div>
+    <!-- Footer End -->
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

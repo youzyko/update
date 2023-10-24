@@ -1,0 +1,1411 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+/* ------------------------------------------------------------
+ * Updated   :20171031
+ ------------------------------------------------------------ */
+
+
+ /* 타이틀영역 */
+.title_company h2       {background:url(../img/comm/h2.gif) no-repeat;background-position:0 0;}
+.title_company h3       {background:url(../img/company/h3_company.png?ver2) no-repeat;}
+.title_company h3.h3_1  {background-position:0 0}
+.title_company h3.h3_2  {background-position:0 -60px}
+.title_company h3.h3_3  {background-position:0 -120px}
+.title_company h3.h3_4  {background-position:0 -180px}
+.title_company h3.h3_5  {background-position:0 -240px}
+.title_company h3.h3_6  {background-position:0 -666px}
+.title_company h3.h3_7  {background-position:0 -360px}
+.title_company h3.h3_8  {background-position:0 -303px}
+.title_company h3.h3_10  {background-position:0 -726px}
+.title_company h3.h3_11  {background-position:0 -423px}
+.title_company h3.h3_12  {background-position:0 -484px}
+.title_company h3.h3_13  {background-position:0 -544px}
+.title_company h3.h3_14  {background-position:0 -606px}
+.title_company h3.h3_15  {background-position:0 -782px}
+.title_company p        {background:url(../img/company/title_p.png) no-repeat;}
+.title_company .p_1     {background-position:0 0;}
+.title_company .p_2     {background-position:0 -75px;}
+.title_company .p_3     {background-position:0 -150px;}
+.title_company .p_4     {background-position:0 -225px;}
+.title_company .p_5     {background-position:0 -300px;}
+.title_company .p_6     {background-position:0 -815px;height:50px}
+.title_company .p_7     {background-position:0 -355px;}
+.title_company .p_8     {background-position:0 -300px;}
+.title_company .p_9     {background-position:0 -370px;}
+.title_company .p_10     {background-position:0 -877px;}
+.title_company .p_11     {background-position:0 -522px;}
+.title_company .p_12     {background-position:0 -599px;}
+.title_company .p_13     {background-position:0 -675px;}
+.title_company .p_14     {background-position:0 -749px;}
+.title_company .p_15     {background-position:0 -952px;}
+.topimg_company         {background:url(../img/comm/topimg_hanmi.jpg) no-repeat}
+.company_sub            {color:#464646;padding-bottom:20px;font-size:15px}
+.company_sub strong     {font-size:18px;font-weight:bold;color:#202020;}
+
+.sub_tab                {text-align:left;width:100%;padding-bottom:40px;}
+.sub_tab li            {position:relative;display:inline-block;zoom:1;*display:inline;}
+.sub_tab li a            {margin-left:-4px;padding:10px 12px;border:1px solid #e7e7e7;text-align:center;margin-right:2px;margin-bottom:2px}
+.sub_tab li a.on          {background:#ed1c24;color:#fff;font-weight:bold;border-bottom:1px solid #ed1c24;border-right:1px solid #ed1c24;border-top:none}
+.sub_tab li a.on        {color:#fff;}
+
+.pt20                   {padding-top:20px}
+.sub_title              {font-size:15px}
+.sub_title strong       {font-size:18px}
+
+/* 인사말 */
+.ceo_greeting {position:relative;overflow:auto;}
+.ceo_greeting p {margin-bottom:20px}
+.ceo_greeting .txArea {text-align:justify;display:flex;align-items: flex-end;}
+.ceo_greeting .txArea > div:nth-child(2) p{margin-bottom:0;margin-top:10px;}
+.ceo_greeting .txArea > img{margin-top: 80px;}
+.ceo_greeting .ceoPhoto {position:absolute;right:0;bottom:0}
+
+/*회사개요*/
+.img_company            {float:left;margin-right:30px;width:319px;}
+.company_info           {float:right;width:651px;padding-top:10px}
+.company_info strong    {color:#ff1d1d;font-weight:bold;font-size:20px}
+.company_info dl     {width:100%;border-bottom:1px solid #e7e7e7;line-height:36px;overflow:auto}
+.company_info dt  {float:left;width:70px;padding-left:15px;color:#3c3c3c;background:url(../img/company/bul_company.gif) no-repeat 5px 50%;font-weight:600}
+
+.company_vision          {clear:both;padding-top:20px;}
+.basic_box               {float:left;margin-top:20px;width:488px;height:340px;border-top:1px solid #e0e0e0;border-bottom:1px solid #bababa;border-left:1px solid #e0e0e0;   border-right:1px solid #e0e0e0}
+.basic_box.mr           {margin-right:20px}
+.basic_box.vision1      {background:url(../img/company/company_vision1.jpg) no-repeat;}
+.basic_box.vision2      {background:url(../img/company/company_vision2.jpg) no-repeat;}
+.basic_box.vision3      {background:url(../img/company/company_vision3.jpg) no-repeat;}
+.basic_box.vision4      {background:url(../img/company/company_vision4.jpg) no-repeat;}
+.basic_box .vision_list           {margin-top:138px;padding:20px}
+.basic_box .vision_list dt        {font-size:18px;padding-bottom:15px;font-weight:bold;color:#3e3e3e;}
+.basic_box .vision_list dt strong {color:#ff1d1d;font-size:23px}
+.basic_box .vision_list dd        {color:#787878}
+.company_real            {clear:both;height:580px;padding-top:30px;background:url(../img/company/info_real.gif) no-repeat;background-position:0 30px;
+                           text-indent:-1000em;overflow:hidden;}
+
+/*history*/
+.history_tab {padding-bottom:40px;font-size:0;padding-left:1px;}
+.history_tab li {display:inline-block;vertical-align:top;margin-left:-1px;}
+.history_tab li a {padding:10px;border:1px solid #e7e7e7;text-align:center;font-size:14px;}
+.history_tab li a.on {background:#ed1c24;color:#fff;font-weight:bold;border-bottom:1px solid #ed1c24;border-right:1px solid #ed1c24;border-top:none}
+
+@media screen and (max-width:767px) {
+	.history_tab {white-space:nowrap;overflow:auto;padding-bottom:0;margin-bottom:20px;}
+}
+
+.history_wrap {}
+.history_area.on {display:block;}
+.history_area:after {content:"";display:block;clear:both;}
+.history_area {clear:both;width:100%;display:none;}
+.history_area h5 {float:left;width:251px;height:216px;white-space:nowrap;text-indent:100%;overflow:hidden}
+.history_area .year2023 {background:url(../img/company/history_2023.png) no-repeat;}
+.history_area .year2022 {background:url(../img/company/history_2022.png) no-repeat;}
+.history_area .year2021 {background:url(../img/company/history_2021.png) no-repeat;}
+.history_area .year2020 {background:url(../img/company/history_2020.png) no-repeat;}
+.history_area .year2019 {background:url(../img/company/history_2019.png) no-repeat;}
+.history_area .year2018 {background:url(../img/company/history_2018.png) no-repeat;}
+.history_area .year2017 {background:url(../img/company/history_2017.png) no-repeat;}
+.history_area .year2016 {background:url(../img/company/history_2016.png) no-repeat;}
+.history_area .year2015 {background:url(../img/company/history_2015.png) no-repeat;}
+.history_area .year2014 {background:url(../img/company/history_2014.png) no-repeat;}
+.history_area .year2013 {background:url(../img/company/history_2013.png) no-repeat;}
+.history_area .year2012 {background:url(../img/company/history_2012.png) no-repeat;}
+.history_area .year2011 {background:url(../img/company/history_2011.png) no-repeat;}
+.history_area .year2010 {background:url(../img/company/history_2010.png) no-repeat;}
+.history_area .year2009 {background:url(../img/company/history_2009.png) no-repeat;}
+.history_area .year1999 {background:url(../img/company/history_1999.png) no-repeat;}
+
+.h_List {position:relative;float:right;width:70%;border-top:1px solid #868686}
+.h_List dt {position:absolute;top:10px;color:#ed1c24;font-size:18px;font-weight:600;font-family:Arial;}
+.h_List dd {padding:10px 0 10px 100px;border-bottom:1px solid #e7e7e7;color:#868686;}
+.h_List dd:first-child {border-top:0 none}
+
+/*지도*/
+.map_box               {clear:both;width:955;margin:0 auto;}
+#map                   {width:100%;height:350px;margin:0 auto;border:1px solid #ccc;}
+.map_info              {padding-top:20px}
+.map_info img          {vertical-align:middle;margin-right:10px}
+.map_info li           {position:relative;padding:10px 0 10px 130px}
+.map_info li strong    {position:absolute;top:5px;left:0;width:120px;display:block;}
+.map_info li hr        {display:inherit;margin:10px 0 10px 0;border:1px solid #e7e7e7}
+
+/*CI 규정*/
+.ci_txt                {padding-bottom:20px}
+.ci_title              {color:#ee2d23;font-size:30px;text-align:center;padding:15px 0 20px 0;font-weight:bold}
+.logo_box              {padding-bottom:30px}
+.logo_box .pt20 img {width:660px;height:auto}
+.btn_CI a              {display:inline-block !important;margin-right:10px}
+.logo_box p		       {text-align:center}
+.ci_img      	       {text-align:center}
+.ci_sub_title          {padding-bottom:30px;text-align:left !important}
+.logo_box .down_box    {margin-top:30px;width:660px;margin:0 auto 50px;}
+.logo_box .down_box img {width:auto;height:auto;float:left}
+.logo_box .down_box button {border:0 none;text-indent:-9999px;width:42px;height:42px;margin-left:5px;background:url(../img/company/btn_sprite_ci_down.gif) no-repeat}
+.logo_box .down_box .ai { background-position:0 0}
+.logo_box .down_box .jpg { background-position:-52px 0}
+.logo_box .down_box .pdf { background-position:-104px 0}
+
+/*반부패방침*/
+.cclen_list p {padding:20px 0}
+.cclen_list p:first-child {padding-top:0}
+.cclen_list li{padding:5px 0;font-size:16px;font-weight:600}
+
+/*윤리경영이란*/
+.cp_info               {clear:both;}
+.ethic_left            {float:left;width:513px;}
+.ethic_img             {float:right;width:427px;height:375px;background:url(../img/company/ethic_img1.jpg)no-repeat;text-align:right;}
+
+/*윤리경영운영조직*/
+.img_organ             {text-align:center;padding-bottom:20px;}
+.ethic_box             {position:relative;margin-top:20px;width:488px;border-top:1px solid #e0e0e0;border-bottom:1px solid #bababa;border-left:1px solid #e0e0e0;border-right:1px solid #e0e0e0}
+.ethic_box.hgt1       {height:330px;}
+.ethic_box.hgt2       {height:230px;}
+.ethic_box.hgt3       {height:610px;}
+.ethic_box.hgt4       {height:450px;}
+.ethic_box.hgt5       {height:380px;}
+.ethic_box.hgt6       {height:730px;}
+.ethic_box.hgt7       {height:500px;}
+.ethic_box.fltl {float:left;}
+.ethic_box.fltr {float:right;}
+
+.ethic_box.mr          {margin-right:20px}
+.ethic_box dl          {padding:20px}
+.ethic_box dl dt       {font-size:20px;font-weight:bold;color:#000;background:url(../img/company/bg_cp_sub.gif) no-repeat left bottom;padding-bottom:20px;margin-bottom:10px}
+.ethic_box dl dd       {background:url(../img/company/bul_company.gif) no-repeat 0 18px;padding:10px 0 0 10px;}
+.ethic_box dl dd.bg_n  {background:none;padding:0}
+.img_company1               {width:100%;background:#b4d3ef url(../img/company/company_re2.jpg) no-repeat;height:120px;margin:20px 0}
+.img_company2               {width:100%;background:#cecece url(../img/company/company_re1.jpg) no-repeat;height:120px;margin:20px 0}
+.detail_company        {position:absolute;bottom:0;width:94%;background-color:#f3f3f3;border-top:1px solid #d5d5d5;padding:3%;}
+.detail_company strong {display:block;color:#000;}
+.detail_company ul     {}
+.detail_company ul li  {position:relative;padding:2px 0 2px 70px;font-size:13px;}
+.detail_company ul li strong {position:absolute;left:0;top:3px;width:50px;color:#424242;background:url(../img/company/bul_company.gif) no-repeat 0 10px;padding:0 0 0 10px;}
+
+
+/*윤리경영 운영경과*/
+.cp_history               {position:relative;background:url(../img/company/back_line.gif) repeat-y center;overflow:auto}
+.cp_history h5          {padding:0;margin:0;text-align:center;background:none;width:100%;margin-left:-10px }
+.time_line                {padding-top:30px;width:100%}
+.time_line li             {padding:5px 0;}
+.time_line li p           {font-size:18px;font-weight:bold;padding-bottom:15px;color:#333333;}
+.time_line li.left        {float:left;width:47.8%;text-align:right;background:url(../img/company/bul_year.gif) no-repeat top right;padding:0 3% 30px 0}
+.time_line li.left dl dt  {clear:both;float:right;background:url(../img/company/bul_company.gif) no-repeat right ;text-align:right;font-weight:bold;padding-left:20px;padding-right:8px;color:#333333 }
+.time_line li.left dl dd  {text-align:right;padding-bottom:5px;}
+.time_line li.right       {float:right;width:47.8%;text-align:left;background:url(../img/company/bul_year.gif) no-repeat top left;padding:0 0 10px 3%;margin-top:-40px}
+.time_line li.right dl dt  {clear:both;float:left;background:url(../img/company/bul_company.gif) no-repeat left ;text-align:left;font-weight:bold;padding-left:8px;padding-right:20px;color:#333333 }
+.time_line li.right dl dd  {text-align:left;padding-bottom:5px }
+
+/* 신고 상담*/
+.inqury_box                 {border:1px solid #e5e5e5;padding:20px 30px 30px 30px;margin-top:20px;color:#909090;height:120px;overflow:auto;}
+.inqury_box .policy_list li {padding:10px 0 10px 0;}
+.inqury_box .pt20           {padding-top:20px}
+.inqury_box dl dt           {font-size:15px;font-weight:bold;padding:10px 0 10px 0;color:#d23b41;}
+.inqury_box dl dd           {padding-bottom:10px}
+.ex_list                    {padding-top:5px}
+.ex_list  li                {padding-top:5px}
+.agree_area                 {padding-top:10px;color:#333333;}
+.agree_area label           {margin-right:10px;}
+.agree_area input           {vertical-align:middle}
+
+.report_con {padding-top:30px}
+.tip {font-size:12px;line-height:16px;padding-bottom:10px;color:#ed1c24;text-align:right}
+
+/*자율천명의지*/
+.manager                   {padding-left:340px;}
+.manager.clean             {background:url(../img/company/cleancompany_img.jpg)no-repeat;}
+.manager.ceo                {overflow:auto;background:url(../img/company/cp_photo3.png?ver=4)no-repeat;}
+.manager.man                {overflow:auto;background:url(../img/company/cp_photo2.png)no-repeat;} 
+.txt_manager                {float:right;width:668px}
+.txt_manager strong         {color:#292626;font-size:18px;}
+.ceo_sign                   {padding-top:30px;text-align:right;}
+.ceo_sign strong            {color:#282828;font-size:18px}
+.manager.ceo .txt_manager {text-align:justify;word-break:keep-all;}
+.manager.man .txt_manager {text-align:justify;word-break:keep-all;}
+
+/*윤리경영 자료실*/
+.cp_data p                  {padding-bottom:30px}
+.cp_data ul                 {}
+.cp_data ul li              {float:left;width:19.8%;height:144px;display:block;text-indent:-1000em;border-top:2px solid #383838;border-bottom:1px solid #b4b4b4;}
+.cp_data ul li:first-child  {border-left:1px solid #b4b4b4;}
+.cp_data ul li a            {height:144px}
+.cp_data ul li.data1        {background:url(../img/company/ima_data1.gif) no-repeat top center ;border-right:1px solid #b4b4b4;}
+.cp_data ul li.data2        {background:url(../img/company/ima_data2.gif) no-repeat top center ;border-right:1px solid #b4b4b4;}
+.cp_data ul li.data3        {background:url(../img/company/ima_data3.gif) no-repeat top center ;border-right:1px solid #b4b4b4;}
+.cp_data ul li.data4        {background:url(../img/company/ima_data4.gif) no-repeat top center ;border-right:1px solid #b4b4b4;}
+.cp_data ul li.data5        {background:url(../img/company/ima_data5.gif) no-repeat top center ;border-right:1px solid #b4b4b4;}
+
+
+
+/*윤리경영 신고_상담*/
+.cp_agreement   {padding:20px 30px;border:1px solid #e5e5e5;margin-bottom:15px;background-color:#f6f6f6;}
+.cp_agreement h6 {font-size:14px;font-weight:bold;color:#444;padding-bottom:10px;}
+.cp_agreement p {padding-bottom:20px;font-size:13px;}
+.cp_agreement dt {float:left;margin:inherit;font-size:13px;font-weight:600}
+.cp_agreement dd {padding-left:70px}
+.cp_agreement dl dl dt {clear:both;}
+.cp_agreement dl dl dd {}
+.cp_agreement a {display:inline;text-decoration:underline}
+.processImg {width:100%}
+.processText {display:none;margin-bottom:30px;}
+
+
+
+/*관계사*/
+.family_box {position:relative;float:left;margin-top:20px;width:488px;border-top:1px solid #e0e0e0;border-bottom:1px solid #bababa;border-left:1px solid #e0e0e0;border-right:1px solid #e0e0e0}
+.family_box.mr {margin-right:20px;}
+.family_box .txInfo {padding:20px;}
+.family_box h5 {font-size:20px;font-weight:bold;color:#000;background:url(../img/company/bg_cp_sub.gif) no-repeat left bottom;padding-bottom:20px;margin-bottom:10px;text-indent:0}
+.family_box .bajing {padding-top:150px;background:url(../img/company/company_re2.jpg) no-repeat 0 10px;}
+.family_box .fc {padding-top:150px;background:url(../img/company/company_re1.jpg) no-repeat 0 10px;}
+.family_box .md {}
+.family_box .it {}
+.family_box .onpharm {padding-top:190px;}
+.family_box .jvm {padding-top:150px;background:url(../img/company/company_re3.jpg) no-repeat 0 10px;}
+.family_box .japan {}
+
+
+.family_box .detail_company {background-color:#f3f3f3;border-top:1px solid #d5d5d5;padding:15px;font-size:13px}
+.family_box .detail_company dt {float:left;width:35px;color:#424242;background:url(../img/company/bul_company.gif) no-repeat 0 10px;padding-left:10px;font-weight:800}
+.family_box .detail_company dd {padding-left:50px;}
+.family_box .detail_company h6 {margin-top:10px;padding-bottom:0;color:#000;}
+
+
+/*공단소개*/
+.factory_overview {margin:10px 0 50px 0;}
+.bltBule {color:#004eff}
+.bltPurple {color:#c600ff}
+.bltPink {color:#ff0096}
+.facImgPC {display:block}
+.facImgTab {display:none}
+.facImgMobile {display:none}
+
+.factory_intro img {width:100%;height:auto}
+.factory_intro > div {margin-top:40px}
+.factory_intro .tit {display:inline-block;font-weight:800;padding-bottom:10px;font-size:16px;color:#222}
+.factory_intro li:nth-of-type(n+2) {margin-top:40px}
+.factory_intro dt {font-weight:600;padding-bottom:10px}
+.factory_intro dt:nth-of-type(n+2) {margin-top:20px}
+.factory_intro dd {position:relative;padding-left:8px}
+.factory_intro dd::before {content:"";position:absolute;top:9px;left:0;width:4px;height:1px;background-color:#585858}
+
+.factoryPhoto {overflow:auto;margin-bottom:40px}
+.factoryPhoto li {float:left;width:20%;}
+.factoryPhoto li img {width:98%}
+
+
+.factoryVod {text-align:center}
+.factoryVod iframe {width:100%;height:565px;margin-bottom:40px;}
+
+
+.factoryInfo {box-sizing:border-box;overflow:hidden;width:100%;padding:40px 20px 0 20px;margin-top:10px;border:1px solid #e5e5e5;}
+.factoryInfo > li {box-sizing:border-box;float:left;width:50%;min-height:87px;padding:0 10px 0 130px;background-repeat:no-repeat;font-size:12px;/*border:1px solid #e5e5e5;*/ background-position:20px 0;padding-bottom:40px;}
+.factoryInfo > li:nth-child(odd) {clear:both;}
+.factoryInfo > li * {letter-spacing:-0.025em;word-break:keep-all;}
+.factoryInfo li.section1 {background-image:url(../img/company/factory_section01.png)}
+.factoryInfo li.section2 {background-image:url(../img/company/factory_section02.png)}
+.factoryInfo li.section3 {background-image:url(../img/company/factory_section03.png)}
+.factoryInfo li.section4 {background-image:url(../img/company/factory_section04.png)}
+.factoryInfo li.section5 {background-image:url(../img/company/factory_section05.png)}
+.factoryInfo li.section6 {background-image:url(../img/company/factory_section06.png)}
+.factoryInfo li.section7 {background-image:url(../img/company/factory_section07.png)}
+.factoryInfo li.section8 {background-image:url(../img/company/factory_section08.png)}
+.factoryInfo li.section9 {background-image:url(../img/company/factory_section09.png)}
+.factoryInfo li.section10 {background-image:url(../img/company/factory_section10.png)}
+.factoryInfo li.section11 {background-image:url(../img/company/factory_section11.png)}
+.factoryInfo li.section12 {background-image:url(../img/company/factory_section12.png)}
+.factoryInfo li.section17 {background-image:url(../img/company/factory_section17.png)}
+.factoryInfo li.section18 {background-image:url(../img/company/factory_section18.png)}
+.factoryInfo li.section19 {background-image:url(../img/company/factory_section19.png)}
+.factoryInfo li.section20 {background-image:url(../img/company/factory_section20.png)}
+
+.factoryInfo.type2 li.section1 {background-image:url(../img/company/safety_section01.png)}
+.factoryInfo.type2 li.section2 {background-image:url(../img/company/safety_section02.png)}
+.factoryInfo.type2 li.section3 {background-image:url(../img/company/safety_section03.png)}
+.factoryInfo.type2 li.section4 {background-image:url(../img/company/safety_section04.png)}
+.factoryInfo.type2 li.section5 {background-image:url(../img/company/safety_section05.png)}
+.factoryInfo.type2 li.section6 {background-image:url(../img/company/safety_section06.png)}
+.factoryInfo h6 {font-size:14px;color:#fff;margin-bottom:10px;}
+.factoryInfo.w h6 {color:#fff}
+
+.factoryInfo.redesign {padding:40px 0 0 0;border:0}
+.factoryInfo.redesign h5 {padding:4px 0 10px 0;text-indent:0;background-image:none;background-color:#fff;font-size:18px}
+.factoryInfo.redesign > li {position:relative;padding:0 10px 0 100px;margin-bottom:40px;background-position:0}
+.factoryInfo.redesign[data-design="a"] > li::before {content:"";position:absolute;top:36px;left:0;display:block;width:60px;height:60px;border-radius:30px;-webkit-border-radius:30px;background-color:#525252;background-image:url(../img/csr/sprite_ico_ehs.png);background-repeat:no-repeat}
+.factoryInfo.redesign[data-design="a"] > li:nth-of-type(2)::before {background-position:-180px 0}
+.factoryInfo.redesign[data-design="a"] > li:nth-of-type(3)::before {background-color:#93c548;background-position:-60px 0}
+.factoryInfo.redesign[data-design="a"] > li:nth-of-type(4)::before {background-color:#93c548;background-position:-240px 0}
+.factoryInfo.redesign[data-design="a"] > li:nth-of-type(5)::before {background-color:#93c548;background-position:-120px 0}
+.factoryInfo.redesign[data-design="a"] > li:nth-of-type(6)::before {background-position:0 -60px}
+.factoryInfo.redesign[data-design="b"] > li::before {content:"";position:absolute;top:5px;left:0;display:block;width:60px;height:60px;border-radius:30px;-webkit-border-radius:30px;background-color:#525252;background-image:url(../img/csr/sprite_ico_ehs.png);background-repeat:no-repeat}
+.factoryInfo.redesign[data-design="b"] > li:nth-of-type(1)::before {background-color:#93c548;background-position:-180px -120px}
+.factoryInfo.redesign[data-design="b"] > li:nth-of-type(2)::before {background-color:#93c548;background-position:-180px -60px}
+.factoryInfo.redesign[data-design="b"] > li:nth-of-type(3)::before {background-color:#93c548;background-position:-120px -120px}
+.factoryInfo.redesign[data-design="b"] > li:nth-of-type(4)::before {background-color:#93c548;background-position:-240px -60px}
+.factoryInfo.redesign[data-design="b"] > li:nth-of-type(5)::before {background-color:#48a3c5;background-position:-60px -120px}
+.factoryInfo.redesign[data-design="b"] > li:nth-of-type(6)::before {background-color:#48a3c5;background-position:0 -120px}
+.factoryInfo.redesign[data-design="b"] > li:nth-of-type(7)::before {background-position:0 0}
+.factoryInfo.redesign[data-design="b"] > li:nth-of-type(8)::before {background-position:-120px -60px}
+.factoryInfo.redesign[data-design="b"] > li:nth-of-type(9)::before {background-position:-60px -60px}
+.factoryInfo.redesign ul li {position:relative;padding-left:10px;font-size:14px} 
+.factoryInfo.redesign ul li:before {content:"";position:absolute;top:8px;left:0;display:block;width:4px;height:4px;background-color:#3d3d3d;border-radius:4px;-webkit-border-radius:4px}
+.factoryInfo.redesign ul li ul li:before {content:"";position:absolute;top:10px;left:0;display:block;width:2px;height:1px;background-color:#3d3d3d}
+.factoryInfo.redesign[data-design="b"] h5 {font-size:14px} 
+.factoryInfo.redesign[data-design="b"] .strong {font-weight:bold;font-size:24px;color:#000}
+.factoryInfo.redesign[data-design="b"] ul li {padding-left:0;font-size:18px;font-weight:bold;color:#525252}
+.factoryInfo.redesign[data-design="b"] ul li:before {display:none}
+.factoryInfo.redesign[data-design="b"] .small {font-size:12px;font-weight:normal;display:block}
+
+/*CSR메인*/
+
+.csrMain .csrImg {overflow:hidden}
+.csrMain h5 {background:none;text-indent:inherit;padding-top:20px;padding-bottom:5px;}
+.csrMain ul {width:1020px;margin-left:-10px;}
+.csrMain li {float:left;width:320px;margin:10px;}
+.csrMain li:nth-child(3n+1) {clear:both;}
+.csrMain p {padding-bottom:30px;word-break:keep-all;}
+
+/*EHS*/
+/* .manager.ehs{overflow:auto;background:url(../img/company/ehs_photo.jpg) no-repeat;} */
+
+
+/* image effect */
+
+.bw {
+    -webkit-transition:all 1s ease;/* Safari and Chrome */
+    -moz-transition:all 1s ease;/* Firefox */
+    -o-transition:all 1s ease;/* IE 9 */
+    -ms-transition:all 1s ease;/* Opera */
+    transition:all 1s ease;
+}
+
+.bw:hover {
+    opacity:0.8;
+    filter:alpha(opacity=80);
+    transform:scale(1.15, 1.17);/* Change these numbers to suit your needs */
+    -webkit-transform:scale(1.15, 1.17);/* Safari and Chrome */
+    -moz-transform:scale(1.15, 1.17);/* Firefox */
+    -ms-transform:scale(1.15, 1.17);/* IE 9 */
+    -o-transform:scale(1.15, 1.17);/* Opera */
+
+}
+
+/* 사회공헌 체계도 */
+.esg_schematic > div {text-align:center} 
+.esg_schematic .flow_a::after {content:"";display:block;margin:0 auto;width:10px;height:10px;border-bottom:4px solid #ed1c24;border-top:4px solid transparent;border-left:4px solid #ed1c24;border-right:4px solid transparent;transform:rotate(-45deg)}
+.esg_schematic .flow_a {padding-bottom:20px}
+.esg_schematic .flow_a span {display:inline-block;width:320px;padding:10px 40px;background-color:#ed1c24;color:#fff;border-radius:6px;font-size:16px;box-sizing:border-box}
+.esg_schematic .flow_b {padding-bottom:20px}
+.esg_schematic .flow_b .box {padding:20px;border:1px solid #e5e5e5;border-radius:6px}
+.esg_schematic .flow_b::after {content:"";display:block;margin:0 auto;width:10px;height:10px;border-bottom:4px solid #ed1c24;border-top:4px solid transparent;border-left:4px solid #ed1c24;border-right:4px solid transparent;transform:rotate(-45deg)}
+.esg_schematic .flow_b dl {overflow:hidden;width:80%;margin:0 auto}
+.esg_schematic .flow_b dt {padding-bottom:20px;font-weight:600;font-size:16px}
+.esg_schematic .flow_b dd {float:left;width:calc(100% / 3 - 40px);padding:10px 20px;box-sizing:border-box;background-color:#6f6f6f;border-radius:6px;color:#fff}
+.esg_schematic .flow_b dd:nth-of-type(n+2) {margin-left:60px}
+.esg_schematic .flow_c {display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between} 
+.esg_schematic .flow_c dl {position:relative;width:calc(100% / 5 - 20px);padding-bottom:80px;border:1px solid #e5e5e5;box-sizing:border-box;border-radius:6px}
+.esg_schematic .flow_c dt {padding:10px 0;background-color:#e5e5e5;border-bottom:1px solid #6f6f6f;font-weight:600}
+.esg_schematic .flow_c dd {padding:10px 0}
+.esg_schematic .flow_c dd:nth-last-of-type(1) {position:absolute;bottom:0;left:0;width:100%;padding:40px 0 10px;background-color:#e5e5e5}
+.esg_schematic .flow_c dd:nth-last-of-type(1)::before {content:"";position:absolute;bottom:47px;left:50%;width:10px;height:10px;margin-left:-11px;border-bottom:4px solid #ed1c24;border-top:4px solid transparent;border-left:4px solid #ed1c24;border-right:4px solid transparent;transform:rotate(-45deg)}
+
+/*사회공헌*/
+.preview {overflow:hidden;margin:20px 0}
+.preview li {box-sizing:border-box;width:32%;float:left;padding:10px 20px 10px 0;margin-left:2%;border:1px solid #cccccc;}
+.preview li:first-child {margin-left:0}
+.preview img {float:left;}
+.preview p {text-align:right}
+.preview .textLabel {margin-top:10px;}
+.preview .textCount {font-size:20px;font-weight:600}
+
+.preview .span_box {min-height:60px;padding:10px 0}
+.preview .span_box span:nth-of-type(1) {float:left;width:70%;padding-left:20px;padding-top:10px;font-size:14px;font-weight:800;text-align:left;box-sizing:border-box}
+.preview .span_box span:nth-of-type(1) em {display:block;font-size:12px;font-weight:400} 
+.preview .span_box span:nth-of-type(2) {float:right;width:30%;padding:20px 0;border-radius:30px;-webkit-border-radius:30px;color:#fff;font-size:20px;font-weight:bold;text-align:center}
+.preview .pre1 .span_box span:nth-of-type(2) {background-color:#ff8d8c}
+.preview .pre2 .span_box span:nth-of-type(2) {background-color:#9fa8ed}
+.preview .pre3 .span_box span:nth-of-type(2) {background-color:#85d8ae} 
+
+.preTicket li {width:48%;padding:20px 0;border-top:2px solid #cccccc;border-bottom:2px solid #cccccc;float:left;margin-right:4%;}
+.preTicket li:last-child {margin-right:0}
+.preTicket .textLabel1 {font-size:14px;color:#333333;padding-left:10px;line-height:40px;display:block;background:url(../images/preimg4.gif) no-repeat 0 50%;float:left;}
+.preTicket .textLabel2 {font-size:14px;color:#333333;padding-left:10px;line-height:40px;display:block;background:url(../images/preimg5.gif) no-repeat 0 50%;float:left;}
+.preTicket .textCount {float:right;line-height:40px;font-size:24px;}
+.preTicket .textCount .card {font-size:16px;padding-left:10px}
+.preEtc {float:right;overflow:hidden;}
+.preEtc li {float:left;padding-left:20px;font-size:14px;color:#777777;line-height:28px}
+
+.sect_point .wrap_preview{overflow:hidden}
+.sect_point .preview{float:left;width:calc(50% - 20px);margin-right:20px;}
+.sect_point .preview li{position:relative;float:none;width:100%;height:76px;margin:0}
+.sect_point .preview li+li{margin-top:20px}
+.sect_point .preview img{float:none;position:absolute;left:0;top:0}
+.sect_point .box_thumb{overflow:hidden;height:268px;margin-top:20px;background-color:#e3e3e3}
+
+.local_thumb{overflow:hidden}
+.local_thumb img{display:block;float:left;width:calc(50% - 10px)}
+.local_thumb img+img{margin-left:20px}
+.local_thumb[data-thumb="3"] img{width:calc(99% / 3 - 14px) !important}
+
+.societyGlobal .photoArea {width:1020px;margin-left:-10px;margin-bottom:10px;overflow:hidden}
+.societyGlobal .photoArea li {float:left;margin:10px;}
+.societyGlobal .photoArea img {width:100%}
+.societyGlobal .photoArea.type2 {width:auto;margin:0 -5px 20px;font-size:0;}
+.societyGlobal .photoArea.type2 li {display:inline-block;vertical-align:top;box-sizing:border-box;width:25%;padding:0 5px;margin:0;margin-bottom:10px;float:none;}
+.societyGlobal .photoArea.type2 li img {display:block;width:100%;}
+.societyGlobal .photoArea.type2 .scroll_box {overflow:hidden;width:100%;overflow-x:scroll;white-space:nowrap;}
+.societyGlobal .photoArea.type2 .scroll_box ul {}
+.societyGlobal .photoArea.type2 .scroll_box li {width:245px;padding:0;margin-right:5px}
+.societyGlobal .photoArea.type2 .scroll_box::-webkit-scrollbar {height:20px}
+.societyGlobal .photoArea.type2 .scroll_box::-webkit-scrollbar-thumb {border:1px solid #e5e5e5;background-color:#f6f6f6;border-radius:10px;}
+.societyGlobal .photoArea.type2 .scroll_box::-webkit-scrollbar-track {background-color:transparent;}
+.societyGlobal .photoArea.type2 .scroll_box::-webkit-scrollbar-button {width:0;height:0;}
+.societyGlobal .photoArea.type2 .scroll_box li p {text-align:center}
+.societyGlobal .photoArea.type2 .scroll_box li p:nth-of-type(1) span {display:inline-block;margin-bottom:5px;color:#fff;font-size:12px;padding:4px 10px;background-color:#323232;border-radius:20px}
+.societyGlobal .photoArea.type2 .scroll_box li p:nth-of-type(2) {padding:5px 0 10px 0;font-size:14px;}
+
+.sub_news li a {display:inline}
+.sub_news li a .tx {width:auto}
+
+.info_box {margin-bottom:10px}
+.info_box li {border:1px solid #6f6f6f}
+
+
+
+@media screen and (max-width:768px){
+	.societyGlobal .photoArea.type2 {margin:0 -5px 10px;}
+	.societyGlobal .photoArea.type2 li {width:33.333333%;margin-bottom:10px;}
+}
+
+
+.bk_btn{float:right;position:relative;margin-top:-50px;border:1px solid #e7e7e7;padding:8px 20px;font-weight:600}
+.bk_btn img{padding:1px 8px;}
+
+/*환경경영 20230411 수정*/
+.envirPrize p {margin:-10px 0 40px;color:#000}
+.aboutISO {padding:20px 20px;border:1px solid #e5e5e5;margin-bottom:40px;margin-top:40px;background-color:#f6f6f6;font-size:14px;color:#000}
+.aboutISO dt {font-weight:600;}
+.envirPrize .prizeGoods {overflow:hidden;width:1020px;margin-left:-10px}
+.envirPrize .prizeGoods li {float:left;width:calc(100% / 4);padding:10px;box-sizing:border-box}
+.envirPrize .prizeGoods li img {width:100%;height:auto;border:1px solid #e5e5e5;box-sizing:border-box}
+.envirPrize .prizeGoods.iso {margin-bottom:20px;margin-top:10px;}
+.envirPrize .prizeGoods.iso li {width:calc(100% / 3)}
+.envirPrize .prizeGoods.iso li p {margin:0;padding:0}
+.envirPrize .prizeGoods.iso li p:nth-of-type(1) {float:left;width:133px}
+.envirPrize .prizeGoods.iso li p:nth-of-type(2) {float:right;width:calc(100% - 153px)}
+.envirPrize .prizeGoods.iso li p:nth-of-type(2) span {display:block;}
+.envirPrize .prizeGoods.iso li p:nth-of-type(2) span:nth-of-type(1) {font-weight:600;color:#222}
+.envirPrize .prizeGoods.iso li p:nth-of-type(2) span:nth-of-type(n+2) {margin-top:10px}
+.envirPrize .prizeGoods.iso li p:nth-of-type(2) span:nth-of-type(n+2)::before {content:"";display:inline-block;width:18px;height:18px;background:url(../img/company/icon_down.png) no-repeat 0 0;margin-right:4px;vertical-align:middle}
+.envirPrize .prizeGoods.iso li p:nth-of-type(2) span a {position:relative;display:inline-block;padding:4px 0}
+.envirPrize .prizeGoods.iso li p:nth-of-type(2) span:nth-of-type(n+2) a::after {content:"";display:block;position:absolute;bottom:2px;left:0;width:100%;height:1px;background-color:#585858} 
+.envirPrize .prizeGoods li figcaption {padding:5px 0 10px;text-align:center}
+
+
+/* 상생경영 */
+.fair_schematic {position:relative;overflow:hidden;margin-bottom:60px}
+.fair_schematic li {float:left;width:calc(100% / 2 - 30px);margin-left:60px;padding:40px;padding-top:20px;border:0;border-radius:12px;font-weight:600;font-size:16px;box-sizing:border-box}
+.fair_schematic li span {display:block;padding-top:10px;font-size:14px;font-weight:normal}
+.fair_schematic li:nth-of-type(2n+1) {margin-left:0} 
+.fair_schematic li:nth-of-type(n+3) {margin-top:60px} 
+.fair_schematic li:nth-of-type(1) {background-color:#ecf7ca}
+.fair_schematic li:nth-of-type(2) {background-color:#caf7d6}
+.fair_schematic li:nth-of-type(3) {background-color:#cae3f7}
+.fair_schematic li:nth-of-type(4) {background-color:#cdcaf7}
+.fair_schematic::after {content:"";clear:both;display:block}
+.fair_schematic::before {content:"공정거래\A 4대 원칙";display:block;position:absolute;top:50%;left:50%;margin-top:-80px;margin-left:-80px;width:160px;height:160px;background-color:#4e4e4e;padding-top:48px;border-radius:80px;font-size:22px;font-weight:600;text-align:center;color:#ffffff;line-height:1.4em;box-sizing:border-box;white-space:pre;}
+.ethics_list li {padding-top:10px;margin-left:20px;list-style:decimal}
+.ethics_list li:nth-of-type(1) {padding-top:0}
+
+/* 개인정보보호  */
+.coexist_privacy p {margin-bottom:20px}
+.coexist_privacy p strong {display:block;padding:10px 20px;border:1px solid #e5e5e5;background-color:#f6f6f6;font-weight:400}
+.coexist_privacy ol {list-style-type:decimal}
+.coexist_privacy li {margin-left:20px}
+.coexist_privacy li:nth-of-type(n+2) {margin-top:10px}
+
+/*인재경영*/
+.staffDhr {margin-top:10px}
+.staffDhr .photoArea {width:1020px;margin-left:-10px;margin-bottom:30px;overflow:hidden}
+.staffDhr .photoArea li {width:320px;float:left;padding:10px;box-sizing:border-box;}
+.staffDhr .photoArea li:nth-child(1) {width:28%;}
+.staffDhr .photoArea li:nth-child(2) {width:24%;}
+.staffDhr .photoArea li:nth-child(3) {width:48%;}
+.staffDhr .photoArea img {width:100%}
+.staffDhr .photoArea.type2 {margin-left:0;}
+
+.staffWelfare .banner img {width:100%;height:auto}
+.staffWelfare .cont {margin-top:20px;}
+.staffWelfare .cont > div {border-bottom:1px solid #cccccc;padding:40px 0;}
+.staffWelfare .cont > div:last-child {border-bottom:0 none}
+.staffWelfare .cont h5 {float:left;width:30%;min-height:80px;background:url(../img/company/staffwelfare_h5.png) no-repeat;}
+.staffWelfare .cont h5.h5-1 {background-position:90% -30px}
+.staffWelfare .cont h5.h5-2 {background-position:90% -230px}
+.staffWelfare .cont h5.h5-3 {background-position:90% -465px}
+.staffWelfare .cont ul {float:right;width:70%;}
+.staffWelfare .cont li {float:left;box-sizing:border-box;width:50%;padding-left:20px;background:url(../img/company/blt_staffwelfare.png) no-repeat 5px 50%;line-height:28px;}
+.staffSafety p {margin-bottom:40px;}
+.staffSafety .sub_photo li {width:49%}
+
+.staff2Area {overflow:hidden}
+.staff2Area .table {float:left;width:49%}
+.staff2Area .graph {float:right;width:50%;padding-left:40px;box-sizing:border-box}
+.staff2Area .graph dl {position:relative;padding-left:100px} 
+.staff2Area .graph dl:nth-of-type(n+2) {margin-top:40px} 
+.staff2Area .graph dt {padding-top:10px;font-size:16px;font-weight:600}
+.staff2Area .graph dl dt::before {content:"";display:block;position:absolute;top:0;left:0;width:80px;height:80px;border-radius:40px} 
+.staff2Area .graph dl:nth-of-type(1) dt::before {background:#00a1e2 url(../img/company/ico_woman_power.png) no-repeat 50% 50%} 
+.staff2Area .graph dl:nth-of-type(2) dt::before {background:#00a1e2 url(../img/company/ico_woman_power2.png) no-repeat 50% 50%} 
+.staff2Area .graph dd {padding-top:15px;font-size:30px;font-weight:bold;color:#00a1e2}
+
+
+.rndPercent .table {display:none}
+
+/* 한미약품 인권정책 */
+.staff_policy p:nth-of-type(n+2) { margin-top:20px }
+.staff_policy div.head { display:block;padding:20px;border:1px solid #e5e5e5;background-color:#f6f6f6;font-weight:400 }
+.staff_policy div.head p:nth-child(n+2) { margin-top:15px }
+.staff_policy div.head p:last-child { text-align:right }
+.staff_policy div.head p:last-child em { font-weight:bold }
+.staff_policy div:nth-child(n+2) { margin-top:40px }
+.staff_policy dt { margin-bottom:10px }
+.staff_policy dt span { padding:4px 0;border-bottom:1px solid #222;border-top:1px solid #222;display:inline-block;font-weight:bold } 
+.staff_policy dt:nth-child(n+2) { margin-top:20px }
+
+
+/*지배구조*/
+.mgmRule {width:1020px;margin-left:-10px;}
+.mgmRule li {float:left;width:25%}
+.mgmRule a {display:block;margin:10px;height:200px;background-repeat:no-repeat;background-position:50% 36%;background-color:#f6f6f6;border:1px solid #e5e5e5;background-image:url(../img/company/mgm_rule_off.png);}
+.mgmRule a:hover {border:1px solid #444444;background-color:#ffffff;background-image:url(../img/company/mgm_rule_on.png);}
+.mgmRule h6 {text-align:center;margin-top:140px;font-size:16px;color:#000000;padding:0 5px;word-break:keep-all;font-weight:600;letter-spacing:-0.05em;word-spacing:-0.025em;}
+.mgmRule.type2 h6 {margin-top:130px;}
+.mgmRule.type3 h6 {margin-top:130px;display:block;background:none;}
+.mgmRule .tit {display:block;text-align:center;margin-top:120px;font-weight:bold}
+
+
+/*CSR보고서*/
+.csrReport{overflow:hidden}
+.csrReport a {float:left;margin-right:30px;width:280px;color:#ffffff;}
+.csrReport a:hover {text-decoration:underline;}
+.csrReport img {width:100%}
+.csrReport p {font-size:14px;padding:10px;background-image:url(../img/company/csrreport_img2.png);background-repeat:no-repeat;background-position:18px 50%;background-color:#959595;text-align:center}
+.csrReport .summary{overflow:hidden;width:503px;margin-top:4px}
+.csrReport .summary strong{display:block;font-size:20px;margin-bottom:30px}
+.csrReport .summary p{background:none;text-align:left;padding:0;line-height:20px}
+
+.csrReport .esg{float:left;width:100%}
+.csrReport .report{float:left;width:100%}
+.csrReport .report a{color:#444}
+.csrReport .report td{text-align:left}
+
+/* 20190710 추가 */
+.csrReport ul {overflow:hidden;}
+.csrReport li {position:relative;float:left;width:50%;box-sizing:border-box ;margin-bottom:50px;}
+.csrReport li p {background:none;padding:0;width:50%;text-align:inherit}
+.csrReport li .lft {float:left}
+.csrReport li .rgt {float:left }
+.csrReport li .rgt strong {display:block;padding:5px 0 20px 20px}
+.csrReport li .rgt span {display:block;padding-left:20px;overflow:hidden}
+.csrReport li .rgt span a {display:inline-block;width:130px;padding:5px 0 5px 15px;box-sizing:border-box;background:#959595 url(../img/company/csrreport_img2.png) no-repeat 10px 50%;text-align:center}
+.csrReport li .rgt span a:nth-of-type(1) {margin-bottom:5px}
+
+/* 20230530 추가 */
+.new_report { display:flex; gap:20px; align-items:center }
+.new_report > p { flex-basis:36.8%; flex-shrink:1 }
+.new_report > p img { width:100% }
+.new_report > div { flex:1 }
+.new_report > div strong { display:block; padding-bottom:20px }
+.new_report > div p:last-child { margin-top:20px }
+.new_report > div p:last-child a {display:inline-block;width:130px;padding:5px 0 5px 15px;box-sizing:border-box;background:#959595 url(../img/company/csrreport_img2.png) no-repeat 10px 50%;text-align:center;color:#fff}
+.new_report > div p:last-child a:nth-of-type(1) {margin-bottom:5px}
+
+.tb_company          {border:0;width:100%;table-layout: fixed;}
+.tb_company thead th {height:38px;color:#fff;border:1px solid #aeaeae;border-top:2px solid #000;background-color:#4e4e4e;}
+
+.tb_company tbody th {height:38px;padding:0 10px text-align:left;border:1px solid #e5e5e5;}
+.tb_company td       {height:38px;text-align:center;border:1px solid #e5e5e5;padding:0 10px;word-break:keep-all;}
+.tb_company tbody .em th {background-color:#f7f7f7;text-align:center;color:#323232;text-indent:0;}
+.tb_company tbody .em td {background-color:#f7f7f7;color:#323232;font-weight:bold;}
+.tb_company tfoot th {height:38px;border:1px solid #e5e5e5;background-color:#aeaeae;text-align:center;color:#fff;}
+.tb_company tfoot td {background-color:#aeaeae;color:#fff;}
+.tb_company ul {padding:10px}
+.tb_company li {line-height:24px;}
+.tb_company thead tr+tr th{border-top:0 none}
+
+
+/*����*/
+.tx .deco {padding-bottom:15px;color:#09b1ca;font-size:20px}
+.tx h4 span {color:#373636}
+.tx p {margin-top:10px;line-height:1.6em;}
+.tx p:first-child {margin-top:0}
+.tx .btn_web {background:#ccc;color:#fff;font-size:12px;padding:5px 5px}
+.tx .r_p{float:right;position:relative;margin-top:-60px;}
+
+.tx .btn_web_2 {background:#ccc;color:#fff;font-size:12px;padding:5px 5px}
+.tx .r_p_2{float:right;position:relative;margin-top:-60px;}
+
+
+.thumb {float:right;padding-top:123px}
+.h {float:right;padding-top:0 !important}
+.ima {text-align:center;}
+.dtTable {display:none}
+
+.sub_photo {overflow:hidden;}
+.sub_photo ul {overflow:hidden}
+.sub_photo li {float:left;width:32%;margin-left:2%;margin-bottom:7px}
+.sub_photo li img {width:100%;height:auto}
+.sub_photo li:first-child {margin-left:0}
+.sub_photo .mr {margin-left:0}
+
+.sub_news {overflow:hidden;margin-bottom:20px}
+.sub_news h6 {margin:10px 0;font-size:14px;border-bottom:1px solid #e3e3e3;}
+.sub_news li {clear:both;overflow:hidden;margin-bottom:10px;font-size:13px}
+.sub_news li span {float:left}
+.sub_news li .thumb {width:12%}
+.sub_news li .tx {width:88%;position:relative}
+.sub_news li .tx em {padding-left:10px;font-size:11px;color:#ccc}
+.sub_news li .tx strong {display:block}
+.sub_news li a:hover .tx {text-decoration:underline}
+
+
+
+/* popup */
+#pop_body {border:4px solid #00d0ef;background:#00d0ef}
+#pop_header {padding:10px;background:#00d0ef;position:relative}
+#pop_header h1 {font-size:14px;color:#fff}
+#pop_section {background:#fff}
+#pop_section header {padding:10px;border-bottom:1px solid #00d0ef}
+#pop_section .photo {padding:20px;text-align:center}
+#pop_section .tx {padding:10px;line-height:1.6em}
+#pop_section .tx p {margin-top:15px}
+#pop_section .tx p:first-child {margin-top:0}
+#pop_section .btn_wrap_popup {padding:20px 10px;text-align:center}
+#pop_section .btn_wrap_popup button {width:61px;height:30px;background:url(../images/sprite_btn.png) -1px -129px}
+#pop_section img {width:100%;height:auto}
+#pop_footer {padding:10px 0;text-align:center;font-size:11px;color:#fff}
+#count {position:absolute;top:10px;right:20px;color:#fff}
+
+#touchslider {width:700px;height:395px;overflow:hidden;margin:0 auto;position:relative}
+.touchslider-viewport {width:700px;overflow:hidden;margin:0 auto}
+.touchslider-item {float:left}
+.touchslider-prev {position:absolute;top:220px;left:0;cursor:pointer}
+.touchslider-next{position:absolute;top:220px;right:0;cursor:pointer}
+
+/* popup-prize */
+.wrap_prize {padding:20px}
+.wrap_prize h1 {padding-bottom:15px;padding-left:15px;color:#373636;font-size:23px;background:url(../images/sprite_icon.png) no-repeat 0 -505px}
+.wrap_prize table {border-collapse:collapse}
+.wrap_prize table th, .wrap_prize table td {border:1px solid #e3e3e3;padding:5px 10px;text-align:center}
+.wrap_prize table th {background-color:#f6f6f6;border-bottom:none}
+.wrap_prize table tr:first-child td {border-top:none}
+.wrap_prize table tr th:first-child {border-left:none}
+.wrap_prize table tr td:first-child {border-left:none}
+.wrap_prize table tr th:last-child {border-right:none}
+.wrap_prize table tr td:last-child {border-right:none}
+.wrap_prize .footer {padding-top:10px;font-size:11px;text-align:center}
+
+/* 2020-04-02 윤리규범 */
+.cp_coc li {line-height:1.8em}
+.cp_coc > ul > li > span {display:inline-block;padding:4px 0;border-bottom:1px solid #222;border-top:1px solid #222;color:#222;font-weight:bold}
+.cp_coc ol {padding:20px 0}
+.cp_coc ol > li {list-style:decimal;margin-left:20px;}
+.cp_coc ol > li > ul {padding:10px 0 20px 0}
+.cp_coc ol > li > ul li {background:url(../img/comm/bul_list.gif) no-repeat 0 8px;padding-left:10px}
+.cp_coc .tx_s {font-size:12px;color:#999;padding:40px 0 }
+
+.cp_coc h5[data-bg="1"]::after {background-image:none;background:url(../img/csr/bg_coc_tit1.jpg) no-repeat 50% 60%}
+.cp_coc h5[data-bg="2"]::after {background-image:none;background:url(../img/csr/bg_coc_tit2.jpg) no-repeat 50% 60%}
+.cp_coc h5[data-bg="3"]::after {background-image:none;background:url(../img/csr/bg_coc_tit3.jpg) no-repeat 50% 45%}
+.cp_coc h5[data-bg="4"]::after {background-image:none;background:url(../img/csr/bg_coc_tit4.jpg) no-repeat 50% 48%}
+.cp_coc h5[data-bg="5"]::after {background-image:none;background:url(../img/csr/bg_coc_tit5.jpg) no-repeat 50% 60%}
+.cp_coc h5[data-bg] {position:relative;background:none;text-align:center;padding:50px 0;margin-bottom:40px;overflow:hidden;font-size:18px;color:#fff}
+.cp_coc h5[data-bg]::before {content:"";position:absolute;top:0;left:0;display:block;width:100%;height:100%;background-color:rgba(0,0,0,0.4);z-index:-1}
+.cp_coc h5[data-bg]::after {content:"";position:absolute;top:0;left:0;display:block;width:100%;height:100%;background-size:cover;z-index:-2}
+
+.coc_tit_box {position:relative;padding-bottom:30px}
+.coc_tit_box .btn_language_box {position:absolute;top:-40px ;right:0;z-index:1}
+.coc_tit_box .btn_language_box button {padding:2px 10px;border:0;background-color:#222;color:#fff;text-align:center;cursor:pointer;font-size:12px}
+
+
+@media screen and (max-width:767px)  {
+.topimg_company         {background:none}
+.title_company h2       {background:none}
+.title_company h3       {background:none}
+.title_company p        {background:none}
+
+
+/* 인사말 */
+.ceo_greeting {position:relative;overflow:auto;}
+.ceo_greeting p {margin-bottom:20px}
+.ceo_greeting .txArea {float:none;width:100%;text-align:justify;flex-direction: column;align-items: center;}
+.ceo_greeting .txArea img{margin-top:0;}
+.ceo_greeting .center{text-align:center !important;margin-top:20px}
+.ceo_greeting .ceoPhoto {position:inherit;right:0;bottom:0;text-align:center}
+
+/*회사개요*/
+.img_company            {display:none;}
+.company_info           {float:inherit;width:100%;padding-top:0}
+.company_info strong    {color:#ff1d1d;font-weight:bold;font-size:20px}
+.company_info table     {width:100%;}
+.company_info table th  {width:30%;}
+.company_vision          {clear:both;padding-top:20px;}
+.basic_box              {float:inherit;margin-top:20px;width:100%;height:inherit;border-top:1px solid #e0e0e0;border-bottom:1px solid #bababa;border-left:1px solid #e0e0e0;border-right:1px solid #e0e0e0}
+.basic_box .mr           {margin-right:20px}
+.basic_box.vision1      {background-position:center 0px;}
+.basic_box.vision2      {background-position:center 0px;}
+.basic_box.vision3      {background-position:center 0px;}
+.basic_box.vision4      {background-position:center 0px;}
+.company_real            {clear:both;height:680px;padding-top:30px;background:url(../img/company/m_info_real.gif) no-repeat;background-position:center 30px;
+                           text-indent:-1000em;overflow:hidden;background-size:280px auto}
+
+/*history*/
+.history_area            {clear:both;width:100%;}
+.history_area h5        {display:none}
+.h_List {width:100%;}
+
+/*지도*/
+#map                          {width:100%;height:300px;margin:0 auto;border:1px solid #ccc;}
+.map_info li                  {position:inherit;padding:10px 0 10px 0}
+.map_info li strong           {position:inherit;width:inherit;padding-bottom:10px;display:block;}
+.map_box                      {clear:both;padding-top:20px}
+
+/*CI 규정*/
+.ci_title                     {font-size:20px}
+.ci_txt img                   {width:100%;height:auto}
+.logo_box img                 {width:100%;height:auto}
+.btn_CI a                     {margin-right:2px}
+.btn_CI img                   {width:100px;height:auto}
+.ci_img img {width:70%;height:auto}
+.logo_box .pt20 img {width:100%;height:auto}
+
+/*반부패 방침*/
+.cclen_list li{font-size:14px}
+
+/*윤리경영*/
+.cp_info               {clear:both;padding-top:20px;}
+.ethic_left            {float:none;width:100%;}
+.ethic_img             {float:none;margin:10px auto;width:100%;max-width:427px;background-size:contain;}
+.img_organ img         {width:100%;height:auto}
+.ethic_box             {float:inherit;margin-top:20px;width:100%;border-top:1px solid #e0e0e0;border-bottom:1px solid #bababa;border-left:1px solid #e0e0e0;border-right:1px solid #e0e0e0}
+.ethic_box.hgt1       {height:inherit}
+.ethic_box.hgt2       {height:inherit}
+.ethic_box.hgt3       {height:inherit}
+.ethic_box.hgt4       {height:inherit}
+.ethic_box.hgt5       {height:inherit}
+.ethic_box.mr          {margin-right:0}
+.ethic_box dl          {padding:20px}
+.ethic_box dl dt       {font-size:15px;font-weight:bold;color:#000;background:url(../img/company/bg_cp_sub.gif) no-repeat left bottom;padding-bottom:10px;margin-bottom:10px}
+.ethic_box dl dd       {background:url(../img/company/bul_company.gif) no-repeat 0 18px;padding:10px 0 0 10px;font-size:13px;}
+.detail_company        {position:inherit;bottom:inherit;width:94%;background-color:#f3f3f3;border-top:1px solid #d5d5d5;padding:3%;}
+
+/*윤리경영 운영경과*/
+.cp_history               {position:relative;top:30px;background:url(../img/company/back_line.gif) repeat-y 35px 0 ;overflow:inherit;magin-top:30px}
+.cp_history h5          {padding:0;text-align:left;background:none;margin-left:-30px }
+.cp_history h5 img      {width:100px;height:auto;}
+.time_line                {padding-top:30px;padding-left:inherit;width:inherit}
+.time_line li             {padding:5px 0;}
+.time_line li p           {font-size:18px;font-weight:bold;padding-bottom:15px;color:#333333;}
+.time_line li.left        {float:inherit;width:inherit;text-align:left;background:url(../img/company/bul_year.gif) no-repeat 28px 0;padding:0 0 30px 60px}
+.time_line li.left dl dt  {clear:both;float:inherit;background:none ;text-align:left;font-weight:bold;padding-left:0;padding-right:8px;color:#333333 }
+.time_line li.left dl dd  {float:inherit;text-align:left;padding-bottom:5px;}
+.time_line li.right       {clear:both;float:inherit;width:inherit;text-align:left;background:url(../img/company/bul_year.gif) no-repeat 28px 0;padding:0 0 30px 60px;margin-top:0}
+.time_line li.right dl dt  {clear:both;float:inherit;background:none;text-align:left;font-weight:bold;padding-left:0;padding-right:0;color:#333333 }
+.time_line li.right dl dd  {float:inherit;text-align:left;padding-bottom:5px }
+
+ .cp_inquiry td button {background-color:#666666;color:#fff;padding:5px 10px;margin-top:5px;font-size:13px;font-weight:bold;border:1px solid #595959;vertical-align:middle}
+
+/*자율천명의지*/
+.manager                    { padding-left:0;background:none;}
+.manager.clean              {background:none;}
+.manager.ceo              {background:none;}
+.manager.man              {background:none;}
+.img_manager                {display:none}
+.img_manager img            {}
+.txt_manager                {float:none;width:100%}
+.ceo_sign                   {padding-top:30px;text-align:right;}
+.ceo_sign strong            {color:#282828;font-size:18px}
+
+
+.txt_manager                {}
+
+
+
+
+/*윤리경영 자료실*/
+.cp_data ul                 {}
+.cp_data ul li              {width:48.5%;margin:0 0 1% 0;height:144px;display:block;text-indent:-1000em;border:1px solid #b4b4b4;}
+.cp_data ul li.mr           {margin-right:1%;}
+.cp_data ul li:first-child  {border-left:1px solid #b4b4b4;}
+.cp_data ul li a            {height:144px}
+.cp_data ul li.data1        {background:url(../img/company/ima_data1.gif) no-repeat top center ;border-right:1px solid #b4b4b4;}
+.cp_data ul li.data2        {background:url(../img/company/ima_data2.gif) no-repeat top center ;border-right:1px solid #b4b4b4;}
+.cp_data ul li.data3        {background:url(../img/company/ima_data3.gif) no-repeat top center ;border-right:1px solid #b4b4b4;}
+.cp_data ul li.data4        {background:url(../img/company/ima_data4.gif) no-repeat top center ;border-right:1px solid #b4b4b4;}
+.cp_data ul li.data5        {background:url(../img/company/ima_data5.gif) no-repeat top center ;border-right:1px solid #b4b4b4;}
+
+.processImg {display:none}
+.processText {display:block}
+/* ci */
+.logo_box .down_box    {margin-top:30px;width:100%;overflow:hidden}
+.logo_box .down_box img {width:50%;height:auto;}
+.logo_box .down_box button {text-indent:-9999px;width:42px;height:42px;margin-left:5px}
+.logo_box .down_box span {float:left}
+
+
+/*공단소개*/
+.palInfo {display:none}
+.facImgPC {display:none}
+.facImgTab {display:none}
+.facImgMobile {display:block}
+.facImgMobile img {width:100%;height:auto}
+
+.factoryPhoto li {float:left;width:50%;text-align:center}
+
+
+.factoryVod iframe {height:51.9vw;}
+
+.factoryInfo {width:100%;margin-left:inherit;padding:30px 15px;}
+.factoryInfo > li {width:100%;margin:0;min-height:0;background-size:50px auto !important;background-position:0 0;padding-left:65px;padding-bottom:25px;}
+.factoryInfo > li:Last-child {padding-bottom:0;}
+
+/* 사회공헌 */
+.ico_medical {margin-bottom:50px}
+.ico_medical .tx {float:none;width:100%}
+.ico_medical .tx .deco {padding-bottom:15px;color:#09b1ca;font-size:20px}
+.ico_medical .tx h4 span {color:#373636}
+.ico_medical .tx p {margin-top:10px;line-height:1.6em;}
+.ico_medical .tx p:first-child {margin-top:0}
+.ico_medical .tx .btn_web {background:#ccc;color:#fff;font-size:12px;padding:5px 5px}
+.ico_medical .tx .r_p{float:right;position:relative;}
+.ico_medical .thumb {display:none}
+.ico_medical .h {float:right;padding-top:0 !important}
+.ico_medical img {width:100%;height:auto}
+
+
+.societyGlobal .photoArea {width:100%;margin-left:0}
+.societyGlobal .photoArea li {width:100%;margin:0}
+
+
+
+.preview li {width:100%;margin-bottom:10px;margin-left:0}
+.preview li img {width:auto !important}
+.preview span.textCount {font-size:16px;}
+.preTicket li {width:100%;}
+.preTicket li:first-child {border-bottom:1px solid #e6e6e6}
+.preTicket li:last-child {border-top:0px none}
+
+
+.bk_btn {
+	padding:10px 20px;border:1px solid #e7e7e7;text-align:center;
+}
+
+
+
+
+.sub_photo {overflow:hidden;}
+.sub_photo ul {overflow:hidden}
+.sub_photo h5 {padding-left:40px;margin-bottom:20px;height:26px;line-height:26px;background:url(../images/sprite_icon.png) no-repeat 0 -385px;font-size:16px}
+.sub_photo li {float:left;width:49%;margin-left:2%;text-align:center}
+.sub_photo li.lst {display:none;}
+.sub_photo li:first-child {margin-left:0}
+.sub_photo li img {width:100%;height:auto}
+
+.sub_news {overflow:hidden;margin-bottom:26px}
+.sub_news h5 {padding-left:0px;margin-bottom:20px;height:36px;line-height:36px;border-bottom:1px solid #e3e3e3;font-size:16px}
+
+.sub_news li {clear:both;margin-bottom:0;padding:10px 0;height:auto;font-size:13px;border-top:1px dotted #ccc;overflow:hidden}
+.sub_news li:first-child {border-top:none;padding-top:0}
+.sub_news li span {float:left}
+.sub_news li .thumb {display:none}
+.sub_news li .tx {width:100%;position:relative}
+.sub_news li .tx strong {display:block;padding-bottom:5px}
+.sub_news li a:hover .tx {text-decoration:underline}
+
+
+.ico_medical .dtGraph {display:none}
+.ico_medical .dtTable {display:inherit;}
+.ico_medical .dtTable table {width:100%;border:1px solid #d6d6d6;border-spacing:0;}
+.ico_medical .dtTable th {border-left:1px solid #e8e8e8;padding:10px 0}
+.ico_medical .dtTable td {border-left:1px solid #e8e8e8;border-top:1px solid #e8e8e8;padding:10px 0;text-align:center}
+.ico_medical .dtTable th:first-child, .ico_medical .dtTable td:first-child {border-left:0}
+
+
+
+/*인재경영*/
+.staffDhr .photoArea {width:100%;margin-left:0;}
+.staffDhr .photoArea li {width:auto !important;margin:5px ;float:none;;padding:0;}
+.staffWelfare .banner {width:100%}
+.staffWelfare .cont {margin-top:0px;}
+.staffWelfare .cont > div {padding:20px 0;}
+.staffWelfare .cont h5 {width:100%;min-height:28px;background:none}
+.staffWelfare .cont ul {width:100%;}
+.staffWelfare .cont li {width:100%;}
+
+.staff2Area .table {width:100%;float:none}
+.staff2Area .graph {float:none;width:auto;padding-left:0;margin-bottom:40px}
+.staffSafety .sub_photo li {width:100%}
+
+.rndPercent .img {display:block}
+.rndPercent .table {display:inherit}
+
+
+/*환경경영*/
+.envirPrize .prizeGoods {width:100%;margin-left:0}
+.envirPrize .prizeGoods li {width:calc(100% / 2 - 10px);padding:0}
+.envirPrize .prizeGoods li:nth-of-type(2n+2) {margin-left:20px}
+.envirPrize .prizeGoods.iso li {margin-left:0;margin-bottom:20px}
+.envirPrize .prizeGoods img {width:100%;}
+.envirPrize .prizeGoods.iso li {width:100%;padding:0}
+
+
+
+/*CSR메인*/
+
+.csrMain ul {width:100%;margin-left:inherit;}
+.csrMain li {width:100%;margin:0}
+.csrMain li img {width:100%;}
+
+
+
+/*지배구조*/
+.mgmRule {width:100%;margin-left:0px;}
+.mgmRule li {float:none;width:100%;margin:10px 0;}
+    .mgmRule a img {width:100%}
+
+/* 20190710 추가 */
+.csrReport li .lft { width:40%}
+.csrReport li .rgt { width:60%}
+
+/* 20190823 추가 */
+.sect_point .preview {float:none;width:100%;margin-right:0}
+.sect_point .box_thumb img{width:100%;height:auto}
+.sect_point .box_thumb {height:auto;margin-top:20px;background:none}
+
+}
+
+
+@media screen and (min-width:768px) and (max-width:1000px) {
+.h4_company{padding:20px 0 20px 0;font-size:28px;color:#323232;}
+.img_company            {float:left;margin-right:5%;width:40%;}
+.img_company img        {width:100%;height:auto}
+.company_info           {float:right;width:55%;padding-top:10px}
+.company_info strong    {color:#ff1d1d;font-weight:bold;font-size:20px}
+.company_info table     {width:100%;border-top:1px solid #e7e7e7;border-bottom:1px solid #e7e7e7;margin-top:20px}
+.company_info table td  {padding:5px;border-bottom:1px solid #e7e7e7}
+
+.company_vision          {clear:both;padding-top:20px;width:100%;}
+.basic_box              {float:left;margin-top:20px;width:47.5%;height:380px;border-top:1px solid #e0e0e0;border-bottom:1px solid #bababa;border-left:1px solid #e0e0e0;border-right:1px solid #e0e0e0}
+.basic_box.mr           {margin-right:2.5%}
+.basic_box.vision1      {background:url(../img/company/company_vision1.jpg) no-repeat;}
+.basic_box.vision2      {background:url(../img/company/company_vision2.jpg) no-repeat;}
+.basic_box.vision3      {background:url(../img/company/company_vision3.jpg) no-repeat;}
+.basic_box.vision4      {background:url(../img/company/company_vision4.jpg) no-repeat;}
+.basic_box .vision_list           {margin-top:138px;padding:20px}
+.basic_box .vision_list dt        {font-size:18px;padding-bottom:15px;font-weight:bold;color:#3e3e3e;letter-spacing:-0.05em;}
+.basic_box .vision_list dt strong {color:#ff1d1d;font-size:23px}
+.basic_box .vision_list dd        {color:#787878;letter-spacing:-0.04em;}
+.company_real            {clear:both;height:680px;padding-top:30px;background:url(../img/company/m_info_real.gif) no-repeat;background-position:center 30px;
+                           text-indent:-1000em;overflow:hidden;}
+.company_real img        {width:100%;height:auto}
+
+/*회사개요*/
+.history_area h5        {display:none}
+.h_List {width:100%;}
+
+
+
+/*CI 규정*/
+.ci_txt img             {width:100%;height:auto}
+.logo_box img           {width:100%;height:auto}
+
+/*반부패 방침*/
+.cclen_list li{font-size:14px}
+
+/*윤리경영*/
+.ethic_left            {width:40%;width:calc(100% - 427px)}
+.img_organ img        {width:100%;height:auto;}
+.ethic_box            {float:left;margin-top:20px;width:47.5%;height:auto;border-top:1px solid #e0e0e0;border-bottom:1px solid #bababa;border-left:1px solid #e0e0e0;border-right:1px solid #e0e0e0}
+.ethic_box.mr         {margin-right:2.5%;}
+.ethic_box.hgt1       {height:380px;}
+.ethic_box.hgt2       {height:230px;}
+.ethic_box.hgt3       {height:700px;}
+.ethic_box.hgt4       {height:505px;}
+.ethic_box.hgt5       {height:400px;}
+
+.time_line li.left dl dt  {clear:both;float:right;background:url(../img/company/bul_company.gif) no-repeat right ;width:14%;text-align:right;font-weight:bold;padding-left:1%;padding-right:2%;color:#333333 }
+.time_line li.left dl dd  {float:right;text-align:right;padding-bottom:5px;width:80% }
+.time_line li.right dl dt  {clear:both;float:left;background:url(../img/company/bul_company.gif) no-repeat left ;width:14%;text-align:left;font-weight:bold;padding-left:2%;padding-right:1%;color:#333333 }
+.time_line li.right dl dd  {float:left;text-align:left;padding-bottom:5px;width:78%;}
+
+/*자율천명의지*/
+.manager                    {}
+.img_manager                {float:left;width:26%;}
+.img_manager img            {width:100%;height:auto}
+.txt_manager                {width:100%}
+.ceo_sign                   {padding-top:30px;text-align:right;}
+.ceo_sign strong            {color:#282828;font-size:18px}
+
+/* ci */
+.ci_img img {width:228px;height:auto}
+
+/*공단소개*/
+.facImgPC {display:none}
+.facImgTab {display:block;text-align:center}
+.facImgTab img {width:760px;height:auto}
+.facImgMobile {display:none}
+
+.factoryPhoto li {float:left;width:33.3%;text-align:center}
+.factoryVod iframe {height:52.9vw;}
+
+
+.factoryInfo {width:100%;margin-left:inherit;}
+.factoryInfo > li {width:46%;min-height:200px;margin:10px;}
+.factoryInfo.redesign[data-design="b"] > li {min-height:auto}
+
+/* 사회공헌 */
+.sub_photo {overflow:hidden;}
+.sub_photo ul {overflow:hidden}
+.sub_photo h5 {padding-left:40px;margin-bottom:20px;height:26px;line-height:26px;background:url(../images/sprite_icon.png) no-repeat 0 -385px;font-size:16px}
+.sub_photo li {float:left;width:49%;margin-left:2%;text-align:center}
+.sub_photo li.lst {display:none}
+.sub_photo li:first-child {margin-left:0}
+.sub_photo li img {width:100%;height:auto}
+
+.sub_news {overflow:hidden;margin-bottom:26px}
+/*.sub_news h5 {padding-left:40px;margin-bottom:20px;height:36px;line-height:36px;background:url(../images/sprite_icon.png) no-repeat 0 -421px;font-size:16px}*/
+.sub_news h5 {padding-left:0px;margin-bottom:20px;height:36px;line-height:36px;font-size:16px;border-bottom:1px solid #e3e3e3;}
+.sub_news li {clear:both;margin-bottom:0;padding:10px 0;height:auto;font-size:13px;border-top:1px dotted #ccc;overflow:hidden}
+.sub_news li:first-child {border-top:none;padding-top:0}
+.sub_news li span {float:left}
+.sub_news li .thumb {display:none}
+.sub_news li .tx {width:100%;position:relative}
+.sub_news li .tx strong {display:block;padding-bottom:5px}
+.sub_news li a:hover .tx {text-decoration:underline}
+
+
+.societyGlobal .photoArea {width:100%;margin-left:-5px;}
+.societyGlobal .photoArea li {width:31.9%;margin:5px}
+
+.ico_medical .ima img{width:100%;height:auto}
+
+
+/*환경경영*/
+.envirPrize .prizeGoods {width:100%;margin-left:0}
+.envirPrize .prizeGoods.iso li {width:calc(100% / 2)}
+.envirPrize .prizeGoods img {width:100%;}
+
+
+/*인재경영*/
+.staffDhr .photoArea {width:100%;margin-left:-5px;}
+.staffDhr .photoArea li {height:auto;padding:5px}
+
+
+
+.staffWelfare .cont h5 {width:40%;min-height:80px;background:url(../img/company/staffwelfare_h5.png) no-repeat;}
+.staffWelfare .cont h5.h5-1 {background-position:90% -30px}
+.staffWelfare .cont h5.h5-2 {background-position:90% -260px}
+.staffWelfare .cont h5.h5-3 {background-position:90% -480px}
+.staffWelfare .cont ul {width:60%;}
+.staffWelfare .cont li {width:100%}
+
+
+/*CSR메인*/
+
+.csrMain ul {width:100%;margin-left:inherit;}
+.csrMain li {width:47.2%;min-height:360px}
+.csrMain li:nth-child(3n+1) {clear:none;}
+.csrMain li:nth-child(2n+1) {clear:both;}
+.csrMain li img {width:100%;}
+
+
+
+/*지배구조*/
+.mgmRule {width:100%;margin-left:0px;}
+.mgmRule li {float:left;width:30.5%;color:#ffffff;margin:10px;}
+    .mgmRule a img {width:100%}
+
+.preview .span_box {min-height:70px}
+.preview .span_box span:nth-of-type(2) {font-size:16px;}
+
+
+
+
+}
+/* 20190710 추가 */
+@media (max-width:575px) {
+
+.csrReport li {width:100%}
+.csrReport li:nth-of-type(1) {margin-bottom:40px}
+
+/* 상생경영 */
+.fair_schematic li {width:100%;margin-left:0;padding:20px}
+.fair_schematic li:nth-of-type(n+3) {margin-top:0} 
+.fair_schematic li:nth-of-type(n+2) {margin-top:20px} 
+.fair_schematic::before {display:none}
+
+.esg_schematic .flow_b dd {width:calc(100% / 3 - 20px)}
+.esg_schematic .flow_b dd:nth-of-type(n+2) {margin-left:30px}
+
+
+}
+
+
+.__bcms h4 {height:auto;}
+.__bcms h4 ~ h4 {margin-top:50px;}
+.__bcms .imgInfo {position:relative;padding-left:320px;}
+.__bcms .imgInfo .img {position:absolute;left:0;top:0;}
+.__bcms .imgInfo .info li {font-size:14px;position:relative;padding-left:1.4em;}
+.__bcms .imgInfo .info li ~ li {margin-top:10px;}
+.__bcms .imgInfo .info li .num {position:absolute;left:0;top:0;}
+.__bcms .imgInfo .info p {margin-top:10px;text-align:right;color:#000;font-weight:bold;}
+.__bcms .lastbox .img img ~ img {margin-left:10px;}
+.__bcms .lastbox p {margin-top:10px;}
+
+
+@media (max-width:768px) {
+	.manager.ehs {background:none;}
+	.__bcms h4 {line-height:1.1em;padding-top:6px;}
+	.__bcms .imgInfo {padding-left:0;}
+	.__bcms .imgInfo .img {position:relative;text-align:center;}
+	.__bcms .imgInfo .info {margin-top:10px;}
+	.__bcms .imgInfo .info li ~ li {margin-top:5px;}
+	.__bcms .lastbox .img img ~ img {margin-left:5px;}
+	.__bcms .lastbox p {margin-top:10px;}
+	
+	.esg_schematic .flow_c {-ms-flex-wrap:wrap;flex-wrap:wrap}
+	.esg_schematic .flow_c dl {width:calc(100% / 2 - 20px);margin-bottom:20px}
+	.esg_schematic .flow_b dl {width:100%}
+
+
+}
+
+.staff_guide {}
+.staff_guide > div ~ div {margin-top:40px;}
+.staff_guide dl dt {margin-bottom:10px}
+.staff_guide dl dt span {padding:4px 0;border-bottom:1px solid #222;border-top:1px solid #222;display:inline-block;font-weight:bold}
+.staff_guide .img {text-align:center;margin-top:30px;}
+
+.staff_sinmungo > div ~ div {margin-top:40px;}
+
+
+
+
+
+/*EHS 추가 20230412*/
+/* 경영방침&전략 */
+.manager.ehs{height:395px;background:url(../img/company/ehs_photo1.jpg) no-repeat;}
+.manager.ehs .txt_manager p{color:#000}
+.manager.ehs .txt_manager p ~ p{margin-top:19px;}
+.manager.ehs .txt_manager strong{font-size:24px;}
+.ehs_graph{border-bottom:1px solid #ccc}
+.ehs_graph table{width:100%;}
+.ehs_graph td{padding:25px 0;color:#000;border-radius:10px;border: 2px solid #fff;}
+.ehs_graph td:nth-child(1){text-align:center;font-size:16px;background:#f1f1f1;}
+.ehs_graph .center{text-align:center;}
+.ehs_graph .bb{font-size:16px;}
+.ehs_graph .back1{background:linear-gradient( 90deg, rgb(0,202,162) 15%, rgb(0,119,255) 100%);}
+.ehs_graph .back2{background:#00caa2}
+.ehs_graph .back3{background:#0077ff}
+.ehs_graph .back4{background:#a1e8da;color:#005c48}
+.ehs_graph .back5{background:#3895ff}
+.ehs_graph .back6{background:#d4f1eb}
+.ehs_graph .back7{background:#d8ebff}
+.ehs_graph td:nth-child(1).back6 {background:#d4f1eb;text-align:left;font-size:14px;}
+.ehs_graph td:nth-child(1).back7 {background:#d8ebff}
+.ehs_graph .white{color:#fff;}
+.ehs_graph .another td{padding:20px 2px 20px 20px;vertical-align: top;}
+.ehs_graph .another span{display:block;position:relative;}
+.ehs_graph .another span:before{content:"";position:absolute;top:8px;left:-8px;display:inline-block;border-radius:100%;width:4px;height:4px;background:#000;}
+.ehs_graph .another span ~ span{margin-top:20px}
+.ehs_system img{width:100%;}
+.ehs_graph .__m{display:none}
+.ehs_system{padding-top:85px}
+
+
+/* BCMS */
+.__bcms > p,.__bcms li,.__bcms span{color:#000}
+.__bcms .imgInfo .info p.ceo{font-weight:400}
+.__bcms strong{font-size:24px}
+
+/* 환경경영 */
+.mgm_road{background:url(../img/company/mgm_road.jpg?ver=1)no-repeat;width:100%;background-size:contain;}
+.mgm_road .mgm_txt{display: flex;padding-top:19.3%;}
+.mgm_road .mgm_txt > div{width:33%;padding:9.3% 1% 5%;position:relative;}
+.mgm_road .mgm_txt > div[data-num="2030"]{margin-top:2%;padding-top:7.3%;}
+.mgm_road .mgm_txt > div[data-num="2040"]{margin-top:4%;padding-top:5.3%;}
+.mgm_road .mgm_txt > div > span{position:absolute;bottom:0;left:18px;color:#8ae1d0;font-weight:bold;}
+.mgm_road .mgm_txt > div[data-num="2030"] > span{color:#00caa2;}
+.mgm_road .mgm_txt > div[data-num="2040"] > span{color:#009475;}
+.mgm_road .mgm_txt > div[data-num="2023"]:before{content:"";position:absolute;top:0%;left:-1px;width:1px;height:100%;background:#8ae1d0;}
+.mgm_road .mgm_txt > div[data-num="2023"]:after{content:"";position:absolute;bottom:0;left:0;width:9px;height:9px;background:#8ae1d0;}
+.mgm_road .mgm_txt > div[data-num="2030"]:before{content:"";position:absolute;top:1%;left:-1px;width:1px;height:85%;background:#00caa2;}
+.mgm_road .mgm_txt > div[data-num="2030"]:after{content:"";position:absolute;bottom:14%;left:0;width:9px;height:9px;;background:#00caa2;}
+.mgm_road .mgm_txt > div[data-num="2040"]:before{content:"";position:absolute;top:2%;left:-1px;width:1px;height:76%;background:#009475;}
+.mgm_road .mgm_txt > div[data-num="2040"]:after{content:"";position:absolute;bottom:22%;left:0;width:9px;height:9px;background:#009475;}
+.mgm_road .mgm_txt > div[data-num="2023"] span{bottom:-1.5%}
+.mgm_road .mgm_txt > div[data-num="2030"] span{bottom:12.2%}
+.mgm_road .mgm_txt > div[data-num="2040"] span{bottom:20.2%}
+.mgm_road .mgm_txt > div ul ~ ul{margin-top:11%}
+.mgm_road .mgm_txt > div ul li{color:#000;line-height:20px;position:relative;}
+.mgm_road .mgm_txt > div ul li ~ li{margin-top:10px;padding-left:15px;}
+.mgm_road .mgm_txt > div ul li ~ li:before{content:"";position:absolute;display:inline-block;width:3px;height:3px;background:#000;top:8.5px;left:5px}
+.mgm_road .mgm_txt > div ul li:nth-child(1){font-weight:bold;font-size:16px;margin-bottom:10px;}
+.mgm_road .mgm_txt > div ul li strong{display:inline-block;margin-bottom:5px;}
+.mgm_road .mgm_txt > div .desc{display: none;}
+
+.mgm_char{margin-top:60px;display: flex;justify-content: space-between;}
+.mgm_char .chart{width: 48%;display: flex;flex-direction: column; align-items: flex-end;}
+.mgm_char .chart > p{text-align: center;color: #000;font-size: 18px;font-weight: bold;margin-bottom: 40px;width: 100%;}
+.mgm_char .chart img{max-width:100%;}
+.mgm_char .chart.chart01{width:100%;}
+.mgm_char .chart.chart02{width:49%;}
+.mgm_char .chart.chart03{width:45.6%;align-items: flex-start;}
+.mgm_char .chart.chart04{align-items: flex-start;}
+.mgm_char table{width:100%;}
+.mgm_char table th{background:#00caa3;color:#fff;}
+.mgm_char table th ~ th{border-left:1px solid #fff;}
+.mgm_char table th, .mgm_char table td{padding:15px 0;font-weight:bold;text-align:center;}
+.mgm_char table td{color:#000}
+.mgm_char table td ~ td{border-left:1px solid #67e4cc}
+.mgm_char table .back1 td{background:#f3fffb}
+.mgm_char table .back2 td{background:#cefff5}
+
+.mgm_program{display:flex;margin-top:30px;}
+.mgm_program > div{width:33.33%;position:relative;}
+.mgm_program > div > div{position:relative;line-height:80px;font-size:18px;color:#000;font-weight:900}
+.mgm_program > div > div:before{content:"";position:absolute;top:0;left:-10px;width:calc(100% + 20px);height:100%;z-index:-1;border-radius:40px;mix-blend-mode: multiply;}
+.mgm_program > div > div:after{content:"";position:absolute;top:50%;left:20px;transform:translateY(-50%);border:4px solid #fff;width:7px;height:7px;border-radius:100%}
+.mgm_program > div:nth-child(1) > div{padding-left:45px}
+.mgm_program > div:nth-child(2) > div{padding-left:55px;}
+.mgm_program > div:nth-child(3) > div{padding-left:45px}
+.mgm_program > div:nth-child(1) > div:before{background:#8ae1d0;left:0}
+.mgm_program > div:nth-child(2) > div:before{background:#00caa2}
+.mgm_program > div:nth-child(3) > div:before{background:#009475;left:-20px}
+.mgm_program > div:nth-child(2) > div:after{left:30px}
+.mgm_program > div p{font-size:14px;color:#000;line-height:24px;display: flex;}
+.mgm_program > div p ~ p {margin-top:3px;}
+.mgm_program > div p span:nth-child(1){margin-right:5px;display:inline-block}
+.mgm_program > div:nth-child(1) p{padding-left:20px;}
+.mgm_program > div:nth-child(2) p{padding-left:25px;}
+.mgm_program > div:nth-child(3) p{padding-left:20px;}
+
+h4.mgm_mgt60{margin-top:60px !important;}
+.mgm_tbox{display:flex;margin-top:30px;}
+.mgm_tbox > div{width:50%;border:1px solid #dfdfdf;border-top-color:#00c9b5;padding:30px;}
+.mgm_tbox > div:nth-child(1){border-right:none}
+.mgm_tbox > div p{padding-left:35px;position:relative;font-size:14px;color:#000;line-height:2;}
+.mgm_tbox > div p:nth-child(1){margin-bottom:15px;font-size:18px;font-weight:bold;}
+.mgm_tbox > div p:nth-child(1):before{content:"";position:absolute;top:8px;left:0;background:url(../img/company/tbox_img1.png)no-repeat;width:22px;height:22px;}
+.mgm_tbox > div p ~ p{padding-left:45px;}
+.mgm_tbox > div p ~ p:before{content:"";position:absolute;top:13px;left:37px;background:#000;width:3px;height:3px;border-radius:100%}
+
+
+/* 안전보건경영 */
+.safe_table img{width:100%;margin-bottom:40px;}
+.safe_content > p{font-size:16px;margin-top:20px;color:#000}
+.safe_content > div p{font-size:16px;font-weight:bold;color:#000;}
+.safe_content > div img{max-width:100%;}
+/* EHS 추가 20230412*/
+
+/* ehs 추가  20230412*/
+@media screen and (min-width:768px) and (max-width:1000px){	
+	/* 경영방침&전략 */
+	.ehs_graph td br{display:none}
+	.ehs_system{padding-top:50px}
+	/* 안전보건경영 */
+	.safe_table img{margin-bottom:0;}
+	
+	/* 환경경영 */
+	.mgm_road .mgm_txt > div ul li br{display:none;}
+	.mgm_program > div p br{display:none}
+	.mgm_program > div p em{display:block}
+
+}
+	/* ehs 20230412 */
+@media (max-width:768px){
+	/* 경영방침&전략 */
+	.manager.ehs {background:none;}
+	.ehs_graph td{padding:15px 5px !important;font-size:12px;}
+	.ehs_graph table{table-layout:fixed;}
+	.ehs_graph .__m{display:contents;}
+	.ehs_graph .__p{display:none;}
+	.ehs_graph td br{display:none;}
+	.manager.ehs{height:auto;}
+	.ehs_graph td:nth-child(1){font-size:12px;}
+	.ehs_graph .bb{font-size:14px;}
+	.manager.ehs .ceo{margin-top:10px !important;padding-bottom:0}
+	.h4_m{margin-bottom:10px !important;padding-bottom:10px !important;margin-top:30px !important;}
+	.ehs_graph .another td{text-align:left;padding:15px 20px !important}
+	.ehs_graph .another span ~ span{margin-top:10px;}
+	.ehs_graph td:nth-child(1).back6{font-size:12px;}
+	.ehs_system{padding-top:0px}
+	
+	/* BCMS */
+	.__bcms .imgInfo .info p.ceo{margin-top:10px !important}
+	
+	/* 환경경영 */
+	.mgm_char{margin-top:30px;justify-content: center;flex-direction: column;align-items: center;}
+	.mgm_char .chart{width:100%;align-items: center;}
+	.mgm_char .chart.chart02{width:100%;}
+	.mgm_char .chart.chart03{width:100%;}
+	.mgm_char .chart.chart04{align-items: center;}
+	.mgm_char .chart:nth-child(1){margin-bottom:30px;}
+	.mgm_char .chart > p{margin-bottom:20px;}
+	.mgm_char .chart img{margin:0 auto;}
+
+	.mgm_program{flex-direction:column;margin-top:20px;}
+	.mgm_program > div{width:100%;}
+	.mgm_program > div ~ div{margin-top:30px}
+	.mgm_program > div > div{line-height:55px;font-size:16px;padding-left:45px !important;}
+	.mgm_program > div > div:before{width:100%;left:0}
+	.mgm_program > div > div:after{left:20px !important;}
+	.mgm_program > div:nth-child(3) > div:before{left:0}
+	.mgm_program > div p{padding-left:20px !important;}
+	.mgm_program > div p.pdt40{padding-top:15px !important;}
+	.mgm_program > div p br{display:none}
+	.mgm_program > div p em{display:block}
+	.mgm_tbox{flex-direction: column;margin-top:20px;}
+	.mgm_tbox > div{width:100%;box-sizing:border-box;padding:20px;}
+	.mgm_tbox > div:nth-child(1){border-right:1px solid #dfdfdf}
+	.mgm_tbox > div p{line-height:1.8}
+	.mgm_tbox > div p:nth-child(1){margin-bottom:10px;}
+
+	.mgm_road{background:none;padding-bottom:0 !important;}
+	.mgm_road .mgm_txt{padding-top:0}
+	.mgm_road .mgm_txt > div{padding-top:4%;padding-left:4%;width:100%;border-top:20px solid #8ae1d0;box-sizing: border-box;padding-bottom:10%;}
+	.mgm_road .mgm_txt > div[data-num="2030"]{margin-top:30px;border-color:#00caa2;padding-top:4%;}
+	.mgm_road .mgm_txt > div[data-num="2040"]{margin-top:30px;border-color:#009475;padding-top:4%;}
+	.mgm_road .mgm_txt > div[data-num="2023"]:before{top:-20px;height:calc(100% + 20px);}
+	.mgm_road .mgm_txt > div[data-num="2030"]:before{top:-20px;height:calc(100% + 20px);}
+	.mgm_road .mgm_txt > div[data-num="2040"]:before{top:-20px;height:calc(100% + 20px);}
+	.mgm_road .mgm_txt > div[data-num="2023"]:after{bottom:0%}
+	.mgm_road .mgm_txt > div[data-num="2030"]:after{bottom:0%}
+	.mgm_road .mgm_txt > div[data-num="2040"]:after{bottom:0%}
+	.mgm_road .mgm_txt > div[data-num="2023"] span{bottom:0%}
+	.mgm_road .mgm_txt > div[data-num="2030"] span{bottom:0%}
+	.mgm_road .mgm_txt > div[data-num="2040"] span{bottom:0%}
+	.mgm_road .mgm_txt{flex-direction: column;}
+	.mgm_road .mgm_txt > div ul ~ ul{margin-top:3%;}
+	.mgm_road .mgm_txt > div ul li br{display:none;}
+	.mgm_road .mgm_txt > div .desc{position:absolute;top:-21px;right:0;font-size:12px;color:#fff;text-align: right;padding-right: 10px;}
+	.mgm_road .mgm_txt > div .desc{display: block;}
+	.mgm_road .mgm_txt > div[data-num="2030"] .desc{color:#fff;}
+	.mgm_road .mgm_txt > div[data-num="2040"] .desc{color:#fff;}
+
+	/* 안전보건경영 */
+	.safe_table img{margin-bottom:0;}
+	.safe_content > p{margin-top:10px;font-size:14px;}
+	/* ehs 20230412 */
+}		
+
+
+/* 2023-05-25 */
+
+.border-right > div{width:85%;height:38px;line-height:38px;border-right:1px solid #e5e5e5}
+.tb_company.he_auto td{height:auto;padding:15px 10px}
+
+/* 20230530 추가 */
+@media  screen and (max-width: 575px) {
+	.new_report { flex-direction: column }
+} 
+

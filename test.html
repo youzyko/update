@@ -1,0 +1,1243 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <title>제보하기 | 윤리경영 | 기업</title>
+    <meta charset="euc-kr">
+    <meta name="author" content="한미약품(주)" />
+    <meta name="keywords" content="한미약품,개량신약" />
+    <meta name="description"
+        content="개방형 R&amp;D 전략,글로벌전략의 다각화,RFID를 통한 유통혁신,글로벌신약,복합신약,신약 Pipe-line확보,의약품유통 시스템의 선진화" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes, target-densitydpi=medium-dpi">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/layout.css" rel="stylesheet">
+    <!--[if lte IE 7]>
+<link href="../css/layout_ie7.css" rel="stylesheet">
+<![endif]-->
+    <link href="../css/company.css" rel="stylesheet">
+    <script src="../js/modernizr.custom.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/html5.js"></script>
+    <script>
+        $(document).ready(function () {
+            var ErrorMsg = "";
+            var ResultMsg = "";
+            if (ErrorMsg != "") {
+                alert(ErrorMsg);
+                history.back(-1);
+            }
+            if (ResultMsg != "") alert(ResultMsg);
+
+
+            $("#tabCompanyEthicReport").addClass("on");
+        });
+    </script>
+    <script>
+
+        function fnSave() {
+            var frm = document.report_form;
+
+            if (!document.getElementById("agree").checked) {
+                alert("개인정보 취급방침에 동의해 주시기 바랍니다.");
+                return;
+            }
+
+            //var gubunVal = $('input:radio[name="rbtn_gubun"]:checked').val();
+            var gubunVal = "제보";
+            var sexVal = $('input:radio[name="rbtn_sex"]:checked').val();
+            var hanmiYnVal = $('input:radio[name="rbtn_hanmi_yn"]:checked').val();
+            var openFlagVal = $('input:radio[name="rbtn_open_flag"]:checked').val();
+
+            frm.gubun.value = gubunVal;
+            frm.sex.value = sexVal;
+            frm.hanmiyn.value = hanmiYnVal;
+            frm.openflag.value = openFlagVal;
+
+            /*
+            if(frm.gubun.value == "undefined") {
+                alert("구분을 선택하여 주십시오.");
+                frm.gubun.focus();
+                return;
+            }
+            */
+            if (frm.cust_name.value.replace(/^\s+|\s+$/g, "").length == 0) {
+                alert("이름을 입력하십시오.");
+                frm.cust_name.focus();
+                return;
+            }
+
+            if (frm.hp_num.value.replace(/^\s+|\s+$/g, "").length == 0 && !frm.anonym.checked) {
+                alert("휴대폰 번호를 입력하십시오.");
+                frm.hp_num.focus();
+                return;
+            }
+
+            if (frm.hp_num1.value.replace(/^\s+|\s+$/g, "").length == 0 && !frm.anonym.checked) {
+                alert("휴대폰 번호를 입력하십시오.");
+                frm.hp_num1.focus();
+                return;
+            }
+
+            if (frm.hp_num2.value.replace(/^\s+|\s+$/g, "").length == 0 && !frm.anonym.checked) {
+                alert("휴대폰 번호를 입력하십시오.");
+                frm.hp_num2.focus();
+                return;
+            }
+            /*
+            if(frm.sex.value == "undefined") {
+                alert("성별을 선택하여 주십시오.");
+                frm.sex.focus();
+                return;
+            }
+            */
+            var email = frm.email_id.value + "@" + frm.email_host.value;
+            if (valid_email(email) == false) {
+                alert("이메일 주소가 잘못되었습니다.");
+                frm.email_id.focus();
+                return;
+            }
+
+            if (frm.subject.value.replace(/^\s+|\s+$/g, "").length == 0) {
+                alert("제목을 입력하십시오.");
+                frm.subject.focus();
+                return;
+            }
+
+            if (frm.contents.value.replace(/^\s+|\s+$/g, "").length == 0) {
+                alert("내용을 입력하십시오.");
+                frm.contents.focus();
+                return;
+            }
+            /*
+            if(frm.hanmiyn.value == "undefined") {
+                alert("사원여부를 선택하여 주십시오.");
+                frm.hanmiyn.focus();
+                return;
+            }
+        	
+            if(frm.openflag.value == "undefined") {
+                alert("비밀유지 여부를 선택하여 주십시오.");
+                frm.openflag.focus();
+                return;
+            }
+            */
+            if (!confirm("저장하시겠습니까?"))
+                return;
+
+            // 신성재(메일)
+            //		frm.action = "https://www.hanmi.co.kr/hanmi/handler/Company-RegInquiryOk";
+            //		frm.action = "/hanmi/handler/Company-RegInquiryOk_test";
+
+            frm.action = "https://www.hanmi.co.kr/hanmi/handler/Company-SendMail";
+            //		frm.action = "/hanmi/handler/Company-SendMail";
+            frm.target = "_self";
+            frm.submit();
+        }
+
+        function valid_email(v) {
+            var format = /^((\w|[\-\.])+)@((\w|[\-\.])+)\.([A-Za-z]+)$/;
+            return format.test(v);
+        }
+
+        function email_select_change(v) {
+            var frm = document.report_form;
+
+            frm.email_host.value = v;
+            if (v == "")
+                frm.email_host.readOnly = false;
+            else
+                frm.email_host.readOnly = true;
+        }
+
+        function cancel() {
+            if (!confirm("취소 하시겠습니까?")) return;
+
+            //		history.back(-1);
+            location.href = "/hanmi/handler/Home-Start";
+        }
+
+        // 익명여부
+        function fnChgChkbox() {
+            var frm = document.report_form;
+
+            if (frm.anonym.checked) {
+                frm.cust_name.value = "익명";
+                frm.cust_name.readOnly = true;
+                document.all.hpTr.style.display = "none";
+            } else {
+                frm.cust_name.value = "";
+                frm.cust_name.readOnly = false;
+                document.all.hpTr.style.display = "";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <!--//★★★★★★★★★★★★★★★★★★★★HEADER start★★★★★★★★★★★★★★★★★★★★-->
+
+
+        <!--home.jsp에서만 id="header_main, 기타모든 페이지에서는 id="header-->
+        <!--[if lt IE 9]> <script src="../js/html5.js"></script> <![endif]-->
+        <!--[if gte IE 8]> <script src="../js/respond.min.js"></script> <![endif]-->
+        <script src="../js/header.js?ver=170427"></script>
+        <script>
+            $(function () {
+                jQuery("iframe").each(function () {
+                    var copy = jQuery(this).clone();
+                    jQuery(copy).attr("frameborder", '0');
+                    jQuery(copy).attr("scrolling", 'no');
+                    jQuery(copy).attr("allowtransparency", 'true');
+                    jQuery(copy).replaceAll(this);
+                });
+            });
+        </script>
+
+        <header id="header">
+
+            <!--GNB start-->
+            <div class="outbox_skip"><a href="#container_main" class="skip">본문으로 바로가기</a></div>
+            <div class="outbox_gnb">
+                <div class="box">
+                    <h1><a href="/hanmi/handler/Home-Start" title="메인페이지로 이동" class="toplogo"><img
+                                src="../img/comm/toplogo.png" width="169" height="29" alt="한미약품 로고" /></a></h1>
+                    <nav class="gnb">
+                        <h2 class="hide">주요메뉴</h2>
+                        <ul>
+                            <li class="menu1"><a href="#"
+                                    onclick="window.open('about:blank').location.href='https://hanmi.recruiter.co.kr/appsite/company/index'"><span
+                                        class="i">Recruiting</span></a></li>
+                            <li class="menu2"><a href="/hanmi/handler/Customer-Info"><span class="i">Contact</span></a>
+                            </li>
+                            <li class="menu3"><a href="#"
+                                    onclick="window.open('http://www.hanmipharm.com/ehanmi/handler/Home-Start')"><span
+                                        class="i">English</span></a></li>
+                            <li class="menu5"><a href="/hanmi/handler/Product-SearchPharm"><span
+                                        class="i">판매약국찾기</span></a></li>
+                        </ul>
+                    </nav>
+                    <!--제품검색 start-->
+                    <div class="search">
+                        <fieldset>
+                            <legend>제품검색</legend>
+                            <input type="text" title="제품검색어 입력" value="제품검색" id="hInputProudct" onfocus="this.value='';"
+                                onKeyDown="hOnKeyDown();">
+                            <button type="button" class="btn btn_search"
+                                onclick="hSearchKey();"><span>검색</span></button>
+                        </fieldset>
+                    </div>
+                    <!--//제품검색 end-->
+                </div>
+            </div>
+            <!--//GNB end-->
+            <!--☆☆☆☆☆LNB start☆☆☆☆☆-->
+            <div class="outbox_lnb">
+                <!--LNB 1depth 메뉴 start-->
+                <div class="outbox_lnb_1dep">
+                    <nav class="lnb">
+                        <h2 class="hide">메인메뉴</h2>
+                        <ul>
+                            <li class="menu1"><a href="/hanmi/handler/Company-CompanyIntro"><span
+                                        class="i">기업</span></a></li>
+                            <li class="menu2"><a href="/hanmi/handler/Product-SearchProduct"><span
+                                        class="i">제품</span></a></li>
+                            <li class="menu3"><a href="https://rnd.hanmi.co.kr/rnd"><span class="i">연구</span></a></li>
+                            <li class="menu4"><a href="/hanmi/handler/Csr-Home"><span class="i">ESG</span></a></li>
+                            <li class="menu5"><a href="/hanmi/handler/Investment-InvestmentMain"><span
+                                        class="i">투자</span></a></li>
+                            <li class="menu6"><a href="/hanmi/handler/Customer-Info"><span class="i">고객</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!--//LNB 1depth 메뉴 end-->
+                <!--LNB 2depth 메뉴 start : 1depth 메뉴들 롤오버시 보여짐(class="outbox_lnb_2dep hide"에서 hide제거, <div class="line ">에 hide추가 -->
+                <div class="line" id="lineHide"></div>
+                <div class="outbox_lnb_2dep" id="outbox_lnb_2dep" style="display: none;">
+                    <nav class="lnb_2dep">
+                        <h2 class="hide">전체메뉴</h2>
+                        <div>
+                            <div class="ul_group">
+                                <h3 class="hide"><a href="/hanmi/handler/Company-CompanyCeo">기업</a></h3>
+                                <ul class="ul_box">
+                                    <li class="blit"><a href="/hanmi/handler/Company-CompanyCeo">인사말</a></li>
+                                    <li class="blit">
+                                        <a href="/hanmi/handler/Company-CompanyIntro">한미소개</a>
+                                        <ul>
+                                            <li><a href="/hanmi/handler/Company-CompanyIntro">회사개요</a></li>
+                                            <li><a href="/hanmi/handler/Company-CompanyHistory">회사연혁</a></li>
+                                            <li><a href="/hanmi/handler/Company-CompanyMap">찾아오시는 길</a></li>
+                                            <li><a href="/hanmi/handler/Company-CompanyCI">CI</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="blit">
+                                        <a href="/hanmi/handler/Company-CompanyNews">뉴스</a>
+                                        <ul>
+                                            <li><a href="/hanmi/handler/Company-CompanyNews">한미뉴스</a></li>
+                                            <li><a href="/hanmi/handler/Company-CompanyNews?board_id=INFORMATION_ATTENTION_NEWS"
+                                                    style="font-size:11px">한미가 주목한기사</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="blit"><a href="/hanmi/handler/Company-CompanyFamily">관계사</a></li>
+                                    <li class="blit">
+                                        <a href="/hanmi/handler/Company-CompanyFactory1">플랜트소개</a>
+                                        <ul>
+                                            <li><a href="/hanmi/handler/Company-CompanyFactory1">팔탄플랜트</a></li>
+                                            <li><a href="/hanmi/handler/Company-CompanyFactory2">바이오플랜트</a></li>
+                                            <li><a href="/hanmi/handler/Company-CompanyFactory3">세파플랜트</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <h3 class="hide"><a href="/hanmi/handler/Product-NewsList">제품</a></h3>
+                                <ul class="ul_box">
+                                    <li class="blit"><a href="/hanmi/handler/Product-NewsList">제품소식</a></li>
+                                    <li class="blit"><a href="/hanmi/handler/Product-SearchProduct">제품검색</a></li>
+                                    <!-- <li class="blit"><a href="/hanmi/handler/Product-HomeMedicine">가정상비약</a></li> -->
+                                    <li class="blit"><a href="/hanmi/handler/Product-SearchPharm">판매약국찾기</a></li>
+                                </ul>
+                                <h3 class="hide"><a href="https://rnd.hanmi.co.kr/rnd">연구</a></h3>
+                                <ul class="ul_box">
+                                    <li class="blit"><a href="https://rnd.hanmi.co.kr/rnd">소개</a></li>
+                                    <li class="blit"><a href="https://rnd.hanmi.co.kr/network/">R&D 네트워크</a></li>
+                                    <li class="blit">
+                                        <a href="https://rnd.hanmi.co.kr/pipeline/">파이프라인</a>
+                                        <ul>
+                                            <!-- <li><a href="https://rnd.hanmi.co.kr/pipeline/focused1">주요 파이프라인 소개</a></li> -->
+                                            <li><a href="https://rnd.hanmi.co.kr/pipeline/hop">H.O.P</a></li>
+                                            <li><a href="https://rnd.hanmi.co.kr/pipeline/rnd">혁신신약 파이프라인</a></li>
+                                            <li><a href="https://rnd.hanmi.co.kr/pipeline/snapshot">파이프라인 스냅샷</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="blit">
+                                        <a href="https://rnd.hanmi.co.kr/technology/">기술</a>
+                                        <ul>
+                                            <li><a href="https://rnd.hanmi.co.kr/technology/lapscovery">LAPSCOVERY</a>
+                                            </li>
+                                            <!-- <li><a href="/hanmi/handler/Rnd-Orascovey">ORASCOVERY</a></li> -->
+                                            <li><a href="https://rnd.hanmi.co.kr/technology/pentambody">PENTAMBODY</a>
+                                            </li>
+                                            <!-- <li><a href="/hanmi/handler/Rnd-ProjectBio">바이오신약</a></li> -->
+                                            <li><a href="https://rnd.hanmi.co.kr/technology/cancer">항암제 연구</a></li>
+                                            <li><a href="https://rnd.hanmi.co.kr/technology/formulation">개량/복합신약</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- <li class="blit"><a href="/hanmi/handler/Rnd-Result">성과</a></li> -->
+                                    <li class="blit"><a href="http://oi.hanmi.co.kr/koropeninno/home/main.hm"
+                                            target="_blank">OPEN INNOVATION</a></li>
+                                </ul>
+                                <h3 class="hide"><a href="/hanmi/handler/Csr-Home">CSR</a></h3>
+                                <ul class="ul_box">
+                                    <li class="blit"><a href="/hanmi/handler/Csr-Coc1">윤리경영</a></li>
+                                    <li class="blit"><a href="/hanmi/handler/Csr-EnvirEhs">EHS경영</a></li>
+                                    <li class="blit"><a href="/hanmi/handler/Csr-System">사회공헌</a></li>
+                                    <li class="blit"><a href="/hanmi/handler/Csr-CoexistPrivacy">상생경영</a></li>
+                                    <li class="blit"><a href="/hanmi/handler/Csr-StaffPolicy">인권경영</a></li>
+                                    <li class="blit"><a href="/hanmi/handler/Csr-MgmStock">지배구조</a></li>
+                                    <li class="blit"><a href="/hanmi/handler/Csr-CsrReport">ESG보고서</a></li>
+                                    <li class="blit"><a href="https://cp.hanmi.co.kr" target="_blank">사업관계자CP</a></li>
+                                </ul>
+                                <h3 class="hide"><a href="/hanmi/handler/Investment-InvestmentMain">투자</a></h3>
+                                <ul class="ul_box">
+                                    <li class="blit">
+                                        <a href="/hanmi/handler/Investment-StockNow">주가정보</a>
+                                        <ul>
+                                            <li><a href="/hanmi/handler/Investment-StockNow">현재가시세</a></li>
+                                            <li><a href="/hanmi/handler/Investment-StockMarket">마켓뷰</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="blit">
+                                        <a href="/hanmi/handler/Investment-FinanPosition">재무정보</a>
+                                        <ul>
+                                            <li><a href="/hanmi/handler/Investment-FinanPosition">요약연결재무제표</a></li>
+                                            <li><a href="/hanmi/handler/Investment-FinanIncome">요약포괄손익계산서</a></li>
+                                            <li><a href="/hanmi/handler/Investment-FinanGrade">신용등급</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="blit">
+                                        <a href="/hanmi/handler/Investment-IRread">IR센터</a>
+                                        <ul>
+                                            <li><a href="/hanmi/handler/Investment-IRread">IR일정</a></li>
+                                            <li><a href="#"
+                                                    onClick="MM_openBrWindow('https://ir.gsifn.io/hanmi/ir4_meetings.html','irMeeting','scrollbars=yes,width=900,height=800')">IR미팅</a>
+                                            </li>
+                                            <li><a href="/hanmi/handler/Investment-IrCover">증권사 커버리지</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="blit">
+                                        <a href="/hanmi/handler/Investment-IRnotice">공시정보</a>
+                                        <ul>
+                                            <li><a href="/hanmi/handler/Investment-IRnotice">공시</a></li>
+                                            <li><a href="/hanmi/handler/Investment-Rule">관리규정</a></li>
+                                            <li><a href="/hanmi/handler/Investment-NoticeList">전자공고</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="blit"><a href="/hanmi/handler/Investment-Director">경영진</a></li>
+                                </ul>
+                                <h3 class="hide"><a href="/hanmi/handler/Customer-Info">고객</a></h3>
+                                <ul class="ul_box">
+                                    <li class="blit"><a href="/hanmi/handler/Customer-Info">고객상담안내</a></li>
+                                    <li class="blit"><a href="/hanmi/handler/Customer-Inquiry">1:1문의하기</a></li>
+                                    <li class="blit"><a href="/hanmi/handler/Customer-InquirySearch">1:1문의조회</a></li>
+                                    <li class="blit"><a href="/hanmi/handler/Customer-InfoManage">개인정보처리방침</a></li>
+                                    <li class="blit"><a href="/hanmi/handler/Customer-AboutBioSelect"
+                                            style="letter-spacing:-0.07em;white-space:nowrap;">신약개발 쉽게 알아보기</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <!-- <div class="shadow"></div> -->
+                </div>
+                <!--//LNB 2depth 메뉴 end-->
+            </div>
+            <!--//☆☆☆☆☆LNB end☆☆☆☆☆-->
+        </header>
+        <hr />
+
+        <!--■■■■■■■■■■모바일용 HEADER start■■■■■■■■■■-->
+
+        <header id="m_header">
+
+            <div class="shadow"></div>
+            <div class="m_gnb">
+                <h1><a href="/hanmi/handler/Home-Start" title="메인페이지로 이동" class="toplogo"><img
+                            src="../img/comm/m_toplogo.png" width="144" height="70" alt="한미약품 로고" /></a></h1>
+                <button type="button" class="btn btn_open" id="mBtnMenu"><span>전체메뉴 열기</span></button>
+                <button type="button" class="btn btn_search" id="mBtnSea"><span>검색</span></button>
+            </div>
+            <!--☆☆☆☆☆전체메뉴 start☆☆☆☆☆-->
+            <div class="submenu ">
+                <nav class="allmenu">
+                    <h2 class="hide">전체메뉴</h2>
+                    <h3 class="first">기업</h3>
+                    <ul>
+                        <li><a href="/hanmi/handler/Company-CompanyCeo">인사말</a></li>
+                        <li><a href="/hanmi/handler/Company-CompanyIntro">한미소개</a></li>
+                        <li><a href="/hanmi/handler/Company-CompanyNews">뉴스</a></li>
+                        <li><a href="/hanmi/handler/Company-CompanyFamily">관계사</a></li>
+                        <li><a href="/hanmi/handler/Company-CompanyFactory1">플랜트소개</a></li>
+                    </ul>
+                    <h3>제품</h3>
+                    <ul>
+                        <li><a href="/hanmi/handler/Product-NewsList">제품소식</a></li>
+                        <li><a href="/hanmi/handler/Product-SearchProduct">제품검색</a></li>
+                        <!-- <li><a href="/hanmi/handler/Product-HomeMedicine">가정<br/>상비약</a></li> -->
+                        <li><a href="/hanmi/handler/Product-SearchPharm">판매약국<br />찾기</a></li>
+                    </ul>
+                    <h3>연구</h3>
+                    <ul>
+                        <li><a href="https://rnd.hanmi.co.kr/rnd">소개</a></li>
+                        <li><a href="https://rnd.hanmi.co.kr/network/">R&D 네트워크</a></li>
+                        <li><a href="https://rnd.hanmi.co.kr/pipeline/">파이프라인</a></li>
+                        <li><a href="https://rnd.hanmi.co.kr/technology/">기술</a></li>
+                        <!-- <li><a href="/hanmi/handler/Rnd-Result">성과</a></li> -->
+                        <li><a href="http://oi.hanmi.co.kr/koropeninno/home/main.hm" target="_blank">OPEN INNOVATION</a>
+                        </li>
+                    </ul>
+                    <h3>CSR</h3>
+                    <ul>
+                        <li><a href="/hanmi/handler/Csr-Coc1">윤리경영</a></li>
+                        <li><a href="/hanmi/handler/Csr-EnvirMgm1">환경경영</a></li>
+                        <li><a href="/hanmi/handler/Csr-CoexistPrivacy">사회공헌</a></li>
+                        <li><a href="/hanmi/handler/Csr-StaffPolicy">인권경영</a></li>
+                        <li><a href="/hanmi/handler/Csr-MgmStock">지배구조</a></li>
+                        <li><a href="/hanmi/handler/Csr-CsrReport">ESG보고서</a></li>
+                        <li><a href="https://cp.hanmi.co.kr" target="_blank">사업관계자CP</a></li>
+                    </ul>
+                    <h3>투자</h3>
+                    <ul>
+                        <li><a href="/hanmi/handler/Investment-StockNow">주가정보</a></li>
+                        <li><a href="/hanmi/handler/Investment-FinanPosition">재무정보</a></li>
+                        <li><a href="/hanmi/handler/Investment-IRread">IR센터</a></li>
+                        <li><a href="/hanmi/handler/Investment-IRnotice">공시정보</a></li>
+                        <li><a href="/hanmi/handler/Investment-Director">경영진</a></li>
+                    </ul>
+                    <h3>고객</h3>
+                    <ul>
+                        <li><a href="/hanmi/handler/Customer-Info">고객상담<br />안내</a></li>
+                        <li><a href="/hanmi/handler/Customer-Inquiry">1:1문의</a></li>
+                        <li><a href="/hanmi/handler/Customer-InquirySearch">1:1문의<br />조회</a></li>
+                        <li><a href="/hanmi/handler/Customer-AboutBioSelect">신약개발 쉽게 알아보기</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!--//☆☆☆☆☆전체메뉴 end☆☆☆☆☆-->
+            <!--☆☆☆☆☆검색 start☆☆☆☆☆-->
+            <div class="m_search">
+                <h2 class="hide">검색</h2>
+                <!--제품검색 start-->
+                <div class="m_product_search">
+                    <h3>제품검색</h3>
+                    <fieldset style="position: relative;">
+                        <legend>제품검색</legend>
+                        <input type="text" title="제품명 입력" value="제품명 입력" id="mInputProduct" onfocus="this.value='';"
+                            onKeyDown="mKeyInputSearch();" onblur="mProblur();">
+                        <button type="button" class="btn btn_search" onclick="mSearchKey();"><span>검색</span></button>
+                    </fieldset>
+                </div>
+                <!--//제품검색 end-->
+
+                <!--판매약국검색 start-->
+                <div class="m_pharmacy_search">
+                    <h3>판매약국</h3>
+                    <fieldset>
+                        <legend>판매약국검색</legend>
+                        <div>
+                            <p class="m_pharmacy_search_txt">
+                                <em>일반의약품, 건강기능식품, 의약외품만</em>
+                                검색 가능합니다.
+                            </p>
+                            <div style="position: relative;width: 100%;height: 37px;overflow: hidden">
+                                <span><input type="text" title="제품명 입력" value="제품명 입력" id="mPhInputProduct"
+                                        onfocus="this.value='';" onblur="mPharblur11();"></span>
+                                <span><input type="text" title="지역명 입력" value="지역명 입력" id="mPhInputRegion"
+                                        onfocus="this.value='';" onblur="mPharblur22();"
+                                        onKeyDown="mKeyInputPhSearch();"></span>
+                                <button type="button" class="btn btn_search pharmacy"
+                                    onclick="mSearchPharm();"><span>검색</span></button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <!--//판매약국검색 end-->
+                <button type="button" class="btn btn_close" id="mBtnClo">
+                    <span>닫기</span>
+                </button>
+            </div>
+            <!--//☆☆☆☆☆검색 end☆☆☆☆☆-->
+            <form name="mSeaForm" method="post">
+                <input type="hidden" id="mhikeyWord" name="mhikeyWord" value="" />
+                <input type="hidden" id="msearchFlg" name="msearchFlg" value="k" />
+                <input type="hidden" id="mpageNo" name="mpageNo" value="1" />
+                <input type="hidden" id="mtabFlg" name="mtabFlg" value="f" />
+                <input type="hidden" id="mhiselBox" name="mhiselBox" value="A" />
+            </form>
+
+            <form name="mSeaPham" method="post">
+                <input type="hidden" id="proName" name="proName" value="" />
+                <input type="hidden" id="dong" name="dong" value="" />
+                <input type="hidden" id="pageNo" name="pageNo" value="1" />
+            </form>
+        </header>
+        <!--//■■■■■■■■■■모바일용 HEADER end■■■■■■■■■■-->
+        <!--//★★★★★★★★★★★★★★★★★★★★HEADER end★★★★★★★★★★★★★★★★★★★★-->
+        <!--★★★★★★★★★★★★★★★★★★★★CONTAINER start★★★★★★★★★★★★★★★★★★★★-->
+
+        <div id="container">
+
+            <!--☆☆☆☆☆카테고리메뉴 start☆☆☆☆☆-->
+
+
+            <script src="../js/jquery.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    var arrayUrlSplit = document.URL.split("/");
+                    var urlLength = arrayUrlSplit.length;
+                    var dvsnPageNm = arrayUrlSplit[urlLength - 1];
+                    if (dvsnPageNm.indexOf("?") != -1) dvsnPageNm = dvsnPageNm.split("?")[0]
+
+                    var flowNm = dvsnPageNm.split("-")[0];
+                    $(".lvl2").parent().hide();
+                    $("[id='" + flowNm + "']").parent().parent().show();
+
+                    $(".lvl3").hide();
+
+                    var lvl_1_name = $("[class='" + flowNm + "']").text();
+                    //$("[class='" + flowNm + "']").css("background-color","yellow");
+
+                    $("#lvl_1_name").text(lvl_1_name);
+
+                    $(".list").mouseleave(function () {
+                        $(".path", this).hide();
+                    });
+
+                    $(".list").click(function () {
+                        $(".path", this).toggle();
+                    });
+
+                    $("[id='" + flowNm + "'] li a").each(function () {
+                        var href = $(this).attr("href");
+                        var hrefSplit = href.split("/");
+                        var hrefPageNm = hrefSplit[hrefSplit.length - 1];
+                        //if(href.indexOf(dvsnPageNm) != -1){
+                        if (hrefPageNm == dvsnPageNm) {
+                            if ($(this).parent().parent().attr("class") == "lvl3") {
+                                var obj = $(this).parent().parent().prev();
+                                $(".lvl_2_name").text(obj.text());
+                                //obj.css("background-color","yellow");
+                            }
+                            else if ($(this).parent().parent().parent().parent().attr("class") == "lvl3") {
+                                var obj = $(this).parent().parent().parent().parent().prev();
+                                $(".lvl_2_name").text(obj.text());
+                                //obj.css("background-color","yellow");
+                            }
+                            else {
+                                $(".lvl_2_name").text($(this).text());
+                                //$(this).css("background-color","yellow");
+                            }
+                        }
+                    });
+                });
+            </script>
+            <script>
+                function MM_openBrWindow(theURL, winName, features) { //v2.0
+                    window.open(theURL, winName, features);
+                }
+            </script>
+
+
+            <nav class="nav_category">
+                <div class="wrap_cont">
+                    <h2 class="hide">카테고리메뉴</h2>
+                    <ul>
+                        <li class="home"><a href="/hanmi/handler/Home-Start">홈</a></li>
+
+                        <!-- lvl1 -->
+                        <li class="list"><a href="#" id="lvl_1_name" class=""></a>
+                            <ul class="path">
+                                <li><a href="/hanmi/handler/Company-CompanyCeo" class="Company">기업</a></li>
+                                <li><a href="/hanmi/handler/Product-SearchProduct" class="Product">제품</a></li>
+                                <li><a href="https://rnd.hanmi.co.kr/rnd" class="Rnd">연구</a></li>
+                                <li><a href="/hanmi/handler/Csr-Home" class="Csr">ESG경영</a></li>
+                                <li><a href="/hanmi/handler/Investment-InvestmentMain" class="Investment">투자</a></li>
+                                <li><a href="/hanmi/handler/Customer-Info" class="Customer">고객</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- 기업 -->
+                        <li class="list">
+                            <a href="#" class="lvl_2_name">인사말</a>
+                            <div class="lvl2">
+                                <ul class="path" id="Company">
+                                    <li><a href="/hanmi/handler/Company-CompanyCeo">인사말</a></li>
+                                    <li>
+                                        <a href="/hanmi/handler/Company-CompanyIntro">한미소개</a>
+                                        <ul class="lvl3">
+                                            <li><a href="/hanmi/handler/Company-CompanyIntro">회사개요</a></li>
+                                            <li><a href="/hanmi/handler/Company-CompanyHistory">회사연혁</a></li>
+                                            <li>
+                                                <a href="/hanmi/handler/Company-CompanyMap">찾아오시는 길</a>
+                                                <ul class="lvl4">
+                                                    <li><a href="/hanmi/handler/Company-CompanyMap">한미약품</a></li>
+                                                    <li><a href="/hanmi/handler/Company-CompanyMap1">연구센터</a></li>
+                                                    <li><a href="/hanmi/handler/Company-CompanyMap2">팔탄플랜트</a></li>
+                                                    <!-- <li><a href="/hanmi/handler/Company-CompanyMap3">평택플랜트</a></li> -->
+                                                </ul>
+                                            </li>
+                                            <li><a href="/hanmi/handler/Company-CompanyCI">CI</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/hanmi/handler/Company-CompanyNews">뉴스</a></li>
+                                    <li><a href="/hanmi/handler/Company-CompanyFamily">관계사</a></li>
+                                    <li>
+                                        <a href="/hanmi/handler/Company-CompanyFactory1">플랜트소개</a>
+                                        <ul class="lvl3">
+                                            <li><a href="/hanmi/handler/Company-CompanyFactory1">팔탄플랜트</a></li>
+                                            <!-- <li><a href="/hanmi/handler/Company-CompanyFactory2">평택플랜트</a></li> -->
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- 제품 -->
+                        <li class="list">
+                            <a href="#" class="lvl_2_name">제품소식</a>
+                            <div class="lvl2">
+                                <ul class="path" id="Product">
+                                    <li><a href="/hanmi/handler/Product-NewsList">제품소식</a></li>
+                                    <li>
+                                        <a href="/hanmi/handler/Product-SearchProduct">제품검색</a>
+                                        <ul class="lvl3">
+                                            <li><a href="/hanmi/handler/Product-ProductInfo">제품정보</a></li>
+                                            <li><a href="/hanmi/handler/Product-ProductFaq">FAQ</a></li>
+                                            <li><a href="/hanmi/handler/Product-ProductReport">보도자료</a></li>
+                                            <li><a href="/hanmi/handler/Product-ProductNews">제품소식</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="https://www.hanmi.co.kr/hanmi/handler/Product-SearchPharm">판매약국찾기</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- 연구 -->
+                        <li class="list">
+                            <a href="#" class="lvl_2_name">소개</a>
+                            <div class="lvl2">
+                                <ul class="path" id="Rnd">
+                                    <li><a href="https://rnd.hanmi.co.kr/rnd">소개</a></li>
+                                    <li><a href="https://rnd.hanmi.co.kr/network/">R&D 네트워크</a></li>
+                                    <li>
+                                        <a href="https://rnd.hanmi.co.kr/pipeline/">파이프라인</a>
+                                        <ul class="lvl3">
+                                            <li><a href="https://rnd.hanmi.co.kr/pipeline/focused1">주요 파이프라인 소개</a></li>
+                                            <li><a href="https://rnd.hanmi.co.kr/pipeline/rnd">혁신신약 파이프라인</a></li>
+                                            <li><a href="https://rnd.hanmi.co.kr/pipeline/snapshot">파이프라인 스냅샷</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="https://rnd.hanmi.co.kr/technology/">기술</a>
+                                        <ul>
+                                            <li><a href="https://rnd.hanmi.co.kr/technology/lapscovery">LAPSCOVERY</a>
+                                            </li>
+                                            <!-- <li><a href="/hanmi/handler/Rnd-Orascovey">ORASCOVERY</a></li> -->
+                                            <li><a href="https://rnd.hanmi.co.kr/technology/pentambody">PENTAMBODY</a>
+                                            </li>
+                                            <!-- <li><a href="/hanmi/handler/Rnd-ProjectBio">바이오신약</a></li> -->
+                                            <li><a href="https://rnd.hanmi.co.kr/technology/cancer">항암제 연구</a></li>
+                                            <li><a href="https://rnd.hanmi.co.kr/technology/formulation">개량/복합신약</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- <li><a href="/hanmi/handler/Rnd-Result">성과</a></li> -->
+                                    <li><a href="http://oi.hanmi.co.kr/koropeninno/home/main.hm" target="_blank">OPEN
+                                            INNOVATION</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- CSR경영 -->
+                        <li class="list">
+                            <a href="#" class="lvl_2_name">ESG 메인</a>
+                            <div class="lvl2">
+                                <ul class="path" id="Csr">
+                                    <li><a href="/hanmi/handler/Csr-Home">ESG 메인</a></li>
+                                    <li>
+                                        <a href="/hanmi/handler/Csr-Coc1">윤리경영</a>
+                                        <ul class="lvl3">
+                                            <li>
+                                                <a href="/hanmi/handler/Csr-Ethic">CP개요</a>
+                                                <ul class="lvl4">
+                                                    <li><a href="/hanmi/handler/Csr-Ethic">CP란?</a></li>
+                                                    <li><a href="/hanmi/handler/Csr-Ethic1">CP운영조직</a></li>
+                                                    <li><a href="/hanmi/handler/Csr-Ethic2">운영경과</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="/hanmi/handler/Csr-EthicCeo">자율준수의지천명</a></li>
+                                            <!--<li><a href="/hanmi/handler/Csr-EthicClean">부패방지방침</a></li>-->
+                                            <li><a href="/hanmi/handler/Csr-EthicManager">자율준수관리자</a></li>
+                                            <li><a href="/hanmi/handler/Csr-EthicReport">제보하기</a></li>
+                                            <li><a href="/hanmi/handler/Csr-EthicCertify">인증/수상</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/hanmi/handler/Csr-EnvirEhs">EHS경영</a>
+                                        <ul class="lvl3">
+                                            <li><a href="/hanmi/handler/Csr-EnvirEhs">EHS 경영방침</a></li>
+                                            <li><a href="/hanmi/handler/Csr-EnvirBcms">사업연송성경영(BCMS)</a></li>
+                                            <li><a href="/hanmi/handler/Csr-EnvirUse">환경지속성</a></li>
+                                            <li><a href="/hanmi/handler/Csr-EnvirSafety">산업안전보건</a></li>
+                                            <li><a href="/hanmi/handler/Csr-EnvirPrize">인증/수상</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/hanmi/handler/Csr-System">사회공헌</a>
+                                        <ul class="lvl3">
+                                            <li><a href="/hanmi/handler/Csr-System">사회공헌 체계도</a></li>
+                                            <li><a href="/hanmi/handler/Csr-SocialContribution">나눔의기쁨</a></li>
+                                            <li>
+                                                <a href="/hanmi/handler/Csr-MedicalSupport1">보건의료계지원</a>
+                                                <ul class="lvl4">
+                                                    <li><a href="/hanmi/handler/Csr-MedicalSupport1">의약품지원</a></li>
+                                                    <li><a href="/hanmi/handler/Csr-MedicalSupport2">한미참의료인상</a></li>
+                                                    <li><a href="/hanmi/handler/Csr-MedicalSupport3">한미자랑스런의사상</a></li>
+                                                    <li><a href="/hanmi/handler/Csr-MedicalSupport4">한미중소병원상</a></li>
+                                                    <li><a href="/hanmi/handler/Csr-MedicalSupport5">한미수필문학상</a></li>
+                                                    <li><a href="/hanmi/handler/Csr-MedicalSupport6">사진공모전</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="/hanmi/handler/Csr-SocietyGlobal">글로벌사회공헌</a></li>
+                                            <li><a href="/hanmi/handler/Csr-SocietyCulture">문화예술지원</a></li>
+                                            <li><a href="/hanmi/handler/Csr-SocietyLocal">지역사회기여</a></li>
+                                            <li><a href="/hanmi/handler/Csr-SocietyCertify">인증/수상</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/hanmi/handler/Csr-CoexistPrivacy">상생경영</a>
+                                        <ul class="lvl3">
+                                            <li><a href="/hanmi/handler/Csr-CoexistPrivacy">개인정보보호</a></li>
+                                            <li><a href="/hanmi/handler/Csr-CoexistFairtrade">공정거래</a></li>
+                                            <li><a href="/hanmi/handler/Csr-CoexistGuide">공정거래 4대 가이드라인</a>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/hanmi/handler/Csr-StaffPolicy">인권경영</a>
+                                        <ul class="lvl3">
+                                            <li><a href="/hanmi/handler/Csr-StaffPolicy">인권·노동 방침</a></li>
+                                            <li><a href="/hanmi/handler/Csr-StaffGuide">인권경영가이드</a></li>
+                                            <li><a href="/hanmi/handler/Csr-StaffSinmungo">인권침해 신문고</a></li>
+                                            <li><a href="/hanmi/handler/Csr-StaffDhr">인재육성 제도</a></li>
+                                            <li><a href="/hanmi/handler/Csr-StaffWelfare">복리후생</a></li>
+                                            <li><a href="/hanmi/handler/Csr-StaffIndicator">주요고용지표</a></li>
+                                            <li><a href="/hanmi/handler/Csr-StaffCertify">인증/수상</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/hanmi/handler/Csr-MgmStock">지배구조</a>
+                                        <ul class="lvl3">
+                                            <li><a href="/hanmi/handler/Csr-MgmStock">주주</a></li>
+                                            <li><a href="/hanmi/handler/Csr-MgmBod">이사회</a></li>
+                                            <li><a href="/hanmi/handler/Csr-MgmCommittee">위원회</a></li>
+                                            <li><a href="/hanmi/handler/Csr-MgmRule">규정</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/hanmi/handler/Csr-CsrReport">ESG보고서</a></li>
+                                    <li><a href="https://cp.hanmi.co.kr" target="_blank">사업관계자CP</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- 투자 -->
+                        <li class="list">
+                            <a href="#" class="lvl_2_name">투자 메인</a>
+                            <div class="lvl2">
+                                <ul class="path" id="Investment">
+                                    <li><a href="/hanmi/handler/Investment-InvestmentMain">투자 메인</a></li>
+                                    <li>
+                                        <a href="/hanmi/handler/Investment-StockNow">주가정보</a>
+                                        <ul class="lvl3">
+                                            <li><a href="/hanmi/handler/Investment-StockNow">현재가시세</a></li>
+                                            <li><a href="/hanmi/handler/Investment-StockMarket">마켓뷰</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/hanmi/handler/Investment-FinanPosition">재무정보</a>
+                                        <ul class="lvl3">
+                                            <li><a href="/hanmi/handler/Investment-FinanPosition">요약연결재무제표</a></li>
+                                            <li><a href="/hanmi/handler/Investment-FinanIncome">요약포괄손익계산서</a></li>
+                                            <li><a href="/hanmi/handler/Investment-FinanGrade">신용등급</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/hanmi/handler/Investment-IRread">IR센터</a>
+                                        <ul class="lvl3">
+                                            <li><a href="/hanmi/handler/Investment-IRread">IR일정</a></li>
+                                            <li><a href="#"
+                                                    onClick="MM_openBrWindow('http://www.gsifn.co.kr/IR/hanmi/ir4_meetings.html','irMeeting','scrollbars=yes,width=900,height=800')">IR미팅</a>
+                                            </li>
+                                            <li><a href="/hanmi/handler/Investment-IrCover">증권사 커버리지</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/hanmi/handler/Investment-IRnotice">공시정보</a>
+                                        <ul class="lvl3">
+                                            <li><a href="/hanmi/handler/Investment-IRnotice">공시</a></li>
+                                            <li><a href="/hanmi/handler/Investment-Rule">관리규정</a></li>
+                                            <li><a href="/hanmi/handler/Investment-NoticeList">전자공고</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/hanmi/handler/Investment-Director">경영진</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- 고객 -->
+                        <li class="list">
+                            <a href="#" class="lvl_2_name">고객상담안내</a>
+                            <div class="lvl2">
+                                <ul class="path" id="Customer">
+                                    <li><a href="/hanmi/handler/Customer-Info">고객상담안내</a></li>
+                                    <li><a href="/hanmi/handler/Customer-Inquiry">1:1문의하기</a></li>
+                                    <li><a href="/hanmi/handler/Customer-InquirySearch">1:1문의조회</a></li>
+                                    <li><a href="/hanmi/handler/Customer-InfoManage">개인정보처리방침</a></li>
+                                    <li style="display:none"><a href="/hanmi/handler/Customer-InquiryDetail">1:1문의하기</a>
+                                    </li>
+                                    <li>
+                                        <a href="/hanmi/handler/Customer-AboutBioSelect">신약개발 쉽게 알아보기</a>
+                                        <ul class="lvl3">
+                                            <li><a href="/hanmi/handler/Customer-AboutBioSynthesis">합성의약품</a></li>
+                                            <li><a href="/hanmi/handler/Customer-AboutBioBio">바이오의약품</a></li>
+                                            <li><a href="/hanmi/handler/Customer-AboutBioPlatform">플랫폼기술</a></li>
+                                            <li><a href="/hanmi/handler/Customer-AboutBioLicenes">라이선스계약</a></li>
+                                            <li><a href="/hanmi/handler/Customer-AboutBioMilestone">마일스톤방식</a></li>
+                                            <li><a href="/hanmi/handler/Customer-AboutBioImprove">신약개발프로세스</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!--//☆☆☆☆☆카테고리메뉴 end☆☆☆☆☆-->
+
+            <!--☆☆☆☆☆본문 start☆☆☆☆☆-->
+            <div class="contents">
+                <!--타이틀 start-->
+                <div class="page_title title_company">
+                    <div class="hgroup">
+                        <h2>기업</h2>
+                        <h3 class="h3_4">윤리경영</h3>
+                        <p class="p_9">공정한 경쟁과 <em>투명한 거래질서 확립</em>을 통해 <em>사회적 책임</em>을 수행하는데 최선을 다하고 있습니다.</p>
+                    </div>
+                    <div class="topimg topimg_company"></div>
+                </div>
+                <!--//타이틀 end-->
+                <!--실제내용 start-->
+                <div class="real_con">
+                    <!--탭메뉴 start-->
+
+
+                    <ul class="tab tab_linum_6">
+                        <li id="tabCompanyCoc"><a href="/hanmi/handler/Csr-Coc1">윤리규범</a></li>
+                        <li id="tabCompanyEthic"><a href="/hanmi/handler/Csr-Ethic">CP개요</a></li>
+                        <li id="tabCompanyEthicCeo"><a href="/hanmi/handler/Csr-EthicCeo" class="long">자율준수의지천명</a></li>
+                        <li id="tabCompanyEthicManager"><a href="/hanmi/handler/Csr-EthicManager"
+                                class="long">자율준수관리자</a></li>
+                        <li id="tabCompanyEthicReport"><a href="/hanmi/handler/Csr-EthicReport">제보하기</a></li>
+                        <li id="tabCompanyEthicCertify"><a href="/hanmi/handler/Csr-EthicCertify">인증/수상</a></li>
+                    </ul>
+
+                    <!--//탭메뉴 end-->
+                    <h4 class="custom">제보하기</h4>
+                    <p class="pdb30">공정거래에 대하여 평소 궁금해 하시던 사항이나 거래의 공정성 여부에 대하여 딜레마에 처하신 경우를 말씀해 주시면, 빠른 시일 내에 귀하의
+                        E-mail이나 전화를 통해 답변해 드리도록 하겠습니다.</p>
+                    <h5>이용안내</h5>
+                    <p class="pdb30">회사 및 임직원의 윤리경영에 반하는 비윤리적인 행위에 대한 제보를 받고 있으며 제보자에 대한 비밀은 절대적으로 보호됩니다. 제보 내용은 최대한 빠른
+                        시일 내에 처리하여 그 결과를 제보자가 원하는 방법으로 회신해 드립니다.</p>
+                    <h5>신고대상</h5>
+                    <ul class="pdb30">
+                        <li>- 직무와 관련하여 이해관계자로부터 금품 또는 향응 등을 수수하는 행위</li>
+                        <li>- 직위를 이용하여 부당한 이득을 얻거나 부정한 수단이나 의도를 가지고 손해를 끼친 행위</li>
+                        <li>- 회사자산 및 정보를 부적절하게 사용하거나 부당한 이득을 취하는 행위</li>
+                        <li>- 회사 및 임직원의 관련법령(약사법, 청탁금지법, 공정거래법 등) 위반 행위</li>
+                        <li>- 기타 이해관계자와 관련된 비윤리적 행위 등</li>
+                    </ul>
+                    <h5>신고자 보호 원칙</h5>
+                    <ul class="pdb30">
+                        <li>- 비밀보장 : 제보자 동의 없이 제보자의 신분공개 또는 암시행위 금지</li>
+                        <li>- 신분보장 : 제보 및 자료제출 등의 이유로 불이익이나 차별에 대해 보호</li>
+                        <li>- 책임감면 : 제보와 관련 제보자의 과실 발견 시 해당 제보자에 대한 징계 감면</li>
+                    </ul>
+                    <h5>처리절차</h5>
+                    <img src="../img/company/Processingprocedure.jpg" alt="1.제보하기 | 2.접수완료(자율준수관리자) | 3.관련부서확인 | 4.처리완료"
+                        class="pdb30 processImg">
+                    <ol class="processText">
+                        <li>1.제보하기</li>
+                        <li>2.접수완료(자율준수관리자)</li>
+                        <li>3.관련부서확인</li>
+                        <li>4.처리완료</li>
+                    </ol>
+                    <!-- 개인정보 수집 동의 start-->
+                    <h5>개인정보수집 동의</h5>
+                    <fieldset>
+                        <div class="agreement">                            
+                            <div class="privacy_info_box">
+                                <p>한미약품은 귀하의 문의에 대한 처리 및 회신을 위하여 귀하의 개인정보를 수집 및 처리하고자 합니다. 내용을 자세히 읽으신 후 동의여부를 결정하여
+                                    주시기<br>바랍니다. </p>
+                                <h6>개인정보 수집&#8226;이용 내역</h6>
+                                <table>
+                                    <colgroup>
+                                        <col style="width:25%">
+                                        <col style="width:25%">
+                                        <col style="width:50%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">항목</th>
+                                            <th scope="col">수집&#8226;이용 목적</th>
+                                            <th scope="col">보유기간</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td align="center">(필수항목)<br>성명, 이메일, 전화번호</td>
+                                            <td align="center">한미약품 윤리경영<br>신고/상담 처리 및 회신</td>
+                                            <td class="emp">보유기간 : 개인정보 수집 및 이용목적이 달성된 후에는 해당<br>정보를 지체없이 파기합니다.
+                                                <br>*단,타 법령에 의해 보존의무가 있는 경우 법령이 지정한 기간 동안 보존합니다.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div align="center">
+                            <p>귀하는 위의 개인정보 수집&#8226;이용에 대한 동의를 거부할 권리가 있으며, 동의를 거부하는 경우 문의내용을 등록할 수 없습니다.
+                                <br>위와 같이 개인정보를 수집&#8226;이용하는데 동의하십니까?<br><br>
+                            </p>
+
+                        </div>
+                        <div class="check_agree">
+                            <input type="radio" id="agree" name="agree_yn">
+                            <label for="agree" class="pdr30">동의합니다.</label>
+                            <label for="disagree">
+                                <input type="radio" id="disagree" name="agree_yn">동의하지 않습니다.</label>
+                        </div>
+                    </fieldset>
+                    <!--//개인정보 수집 동의 end-->
+                    <!-- 신고상담-->
+                    <form name="report_form" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="gubun" />
+                        <input type="hidden" name="sex" />
+                        <input type="hidden" name="hanmiyn" />
+                        <input type="hidden" name="openflag" />
+                        <input type="hidden" name="redirectURL"
+                            value="https://www.hanmi.co.kr/hanmi/handler/Csr-EthicReport" />
+                        <fieldset>
+                            <legend>제보 작성</legend>
+                            <p class="board_write_tip"><img src="../img/comm/bul_essentials.gif" alt="" />표시는 필수 입력 항목
+                                입니다.</p>
+                            <table class=" board_write">
+                                <tr>
+                                    <th scope="row"><img src="../img/comm/bul_essentials.gif" alt="" />이름</th>
+                                    <td>
+                                        <input type="text" title="이름입력" name="cust_name">&nbsp;&nbsp;
+                                        <input type="checkbox" id="anonym" name="anonym" onchange="fnChgChkbox()">
+                                        <label for="checkbox">익명</label>
+                                    </td>
+                                </tr>
+                                <tr class="policy_tbl" id="hpTr">
+                                    <th scope="row"><img src="../img/comm/bul_essentials.gif" alt="" />휴대폰</th>
+                                    <td class="hp">
+                                        <input type="text" title="핸드폰 중간자리 입력" name="hp_num">
+                                        -
+                                        <input type="text" title="핸드폰 중간자리 입력" name="hp_num1">
+                                        -
+                                        <input type="text" title="핸드폰 뒷자리 입력" name="hp_num2">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><img src="../img/comm/bul_essentials.gif" alt="" />이메일</th>
+                                    <td class="email"><input type="text" title="이메일 아이디 입력" class="e_id"
+                                            name="email_id">
+                                        @
+                                        <input type="text" title="이메일 도메인 입력" class="e_domain" name="email_host">
+                                        <select name="select" id="select" onchange="email_select_change(this.value)">
+                                            <option value="">직접입력</option>
+                                            <option value="hanmail.net">다음</option>
+                                            <option value="hotmail.com">핫메일</option>
+                                            <option value="yahoo.co.kr">야후 코리아</option>
+                                            <option value="yahoo.com">야후</option>
+                                            <option value="lycos.co.kr">라이코스 코리아</option>
+                                            <option value="lycos.com">라이코스</option>
+                                            <option value="chollian.net">천리안</option>
+                                            <option value="netian.com">네띠앙</option>
+                                            <option value="unitel.co.kr">유니텔</option>
+                                            <option value="dreamwiz.com">드림위즈</option>
+                                            <option value="netsgo.com">넷츠고</option>
+                                            <option value="orgio.net">오르지오</option>
+                                            <option value="dreamx.net">드림엑스</option>
+                                            <option value="kornet.net">코넷</option>
+                                            <option value="korea.com">코리아닷컴</option>
+                                            <option value="hanmir.com">한미르</option>
+                                            <option value="paran.com">파란</option>
+                                            <option value="naver.com">네이버</option>
+                                            <option value="empal.com">엠팔</option>
+                                            <option value="freechal.com">프리챌</option>
+                                            <option value="gmail.com">지메일</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><img src="../img/comm/bul_essentials.gif" alt="" />제목</th>
+                                    <td><input type="text" title="제목입력" style="width:100%;" name="subject"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><img src="../img/comm/bul_essentials.gif" alt="" />내용</th>
+                                    <td><textarea style="width:100%;" title="내용입력" name="contents"></textarea></td>
+                                </tr>
+                                <tr class="policy_tbl">
+                                    <th scope="row">첨부</th>
+                                    <td><input type="file" style="width:100%" name="file_nm"></td>
+                                </tr>
+                            </table>
+                            <div class="btns">
+                                <button type="button" onclick="fnSave()">문의</button>
+                                <button type="button" onclick="cancel()">취소</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <!--//신고상담-->
+                </div>
+                <!--//실제내용 end-->
+            </div>
+            <!--//☆☆☆☆☆본문 end☆☆☆☆☆-->
+        </div>
+
+        <!--//★★★★★★★★★★★★★★★★★★★★CONTAINER end★★★★★★★★★★★★★★★★★★★★-->
+        <!--★★★★★★★★★★★★★★★★★★★★FOOTER start★★★★★★★★★★★★★★★★★★★★-->
+
+        <script>
+            function MM_openBrWindow(theURL, winName, features) { //v2.0
+                window.open(theURL, winName, features);
+            }
+        </script>
+
+        <footer id="footer">
+            <!--☆☆☆☆☆FOOTER MENU start☆☆☆☆☆-->
+            <div class="outbox_menu">
+                <div class="bg_red"></div>
+                <div class="bg_line"></div>
+                <div class="area">
+                    <nav class="menu">
+                        <h2 class="hide">하단메뉴</h2>
+                        <ul>
+                            <li><a href="/hanmi/handler/Investment-NoticeList">전자공고</a></li>
+                            <li><a href="/hanmi/customer/info_manage.jsp">개인정보처리방침</a></li>
+                            <li><a href="https://srm.hanmi.co.kr/oep/handler/Join-Step1">신규업체 품목등록</a></li>
+                            <!-- <li><a href="#" onclick="window.open('/hanmi/popup/notice011.html', 'stockPopup', 'width=580,height=570,scrollbars=no,status=no,toolbar=no,menubar=no,location=no')" style="font-weight:900; color:#4b89d1">주주 여러분과 국민께 드리는 신년 메시지</a></li> -->
+                        </ul>
+                        <p><a href="#wrapper" class="btn_top"><img src="../img/comm/btn_top.gif" width="46" height="47"
+                                    alt="위로" /></a></p>
+                    </nav>
+                    <div class="chatbot_banner">
+                        <div class="chatbot_box">
+                            <p><a href="#" title="챗봇 새창 열기"><span class="ara_bg"></span><span class="tx">한미약품 챗봇
+                                        <em>아라</em>입니다.<br>무엇을 <em>도와드릴까요?</em></span></a></p>
+                            <span class="beta"><img src="/hanmi/img/comm/chatbot_ico_beta.png" alt="Beta"></span>
+                            <span class="notice"><img src="../img/comm/chatbot_ara_notice_mobile.png"
+                                    alt="내 주변 약사상담 오픈"></span>
+                        </div>
+                    </div>
+                    <nav class="m_menu">
+                        <h2 class="hide">하단메뉴</h2>
+                        <ul>
+                            <li><a href="#"
+                                    onclick="window.open('/hanmi/handler/Etc-Privacy', 'privacyPopup', 'width=700,height=600,scrollbars=yes,status=no,toolbar=no,menubar=no,location=no');return false">개인정보처리방침</a>
+                            </li>
+                            <li><a href="/hanmi/handler/Customer-Inquiry">문의하기</a></li>
+                            <li><a href="http://www.hanmipharm.com/ehanmi/handler/Home-Start"
+                                    target="_blank">ENGLISH</a></li>
+                            <li><a href="http://recruit.hanmi.co.kr" target="_blank">RECRUITING</a></li>
+                        </ul>
+                        <p><a href="#wrapper" class="btn_top"><img src="../img/comm/btn_top.gif" width="46" height="47"
+                                    alt="위로" /></a></p>
+                    </nav>
+                    <!--패밀리사이트 start : 롤오버시 ul목록을 위로 슬라이딩 해주세요-->
+                    <nav class="family_site" id="wwwwp">
+                        <h2><a href="#" id="ffss"><strong>FAMILY SITE</strong></a></h2>
+                        <div class="family_site22222" style="display: none">
+                            <ul>
+                                <li><a href="http://www.hanmiscience.co.kr" target="_blank">한미사이언스</a></li>
+                                <li><a href="http://www.bjhanmi.com.cn" target="_blank">북경한미유한공사</a></li>
+                                <li><a href="http://www.hanmifc.co.kr" target="_blank">한미정밀화학(주)</a></li>
+                                <!-- <li><a href="http://www.hanmihealthcare.co.kr/home/main.hm" target="_blank">한미헬스케어(주)</a></li> -->
+                                <li><a href="http://www.online-pharm.co.kr" target="_blank">온라인팜(주)</a></li>
+                                <!-- <li><a href="http://www.hanmiprocalm.com/customer/home/index.html" target="_blank">한미약품 화장품 프로캄</a></li> -->
+                                <li><a href="http://www.myjvm.com" target="_blank">JVM</a></li>
+                                <li><a href="http://www.photomuseum.or.kr" target="_blank">한미사진미술관</a></li>
+                                <!-- <li><a href="http://www.ofmom.com" target="_blank">오브맘컴퍼니</a></li> -->
+                            </ul>
+                        </div>
+                    </nav>
+                    <!--//패밀리사이트 end-->
+                </div>
+            </div>
+            <!--//☆☆☆☆☆FOOTER MENU end☆☆☆☆☆-->
+            <!--☆☆☆☆☆FOOTER INFO start☆☆☆☆☆-->
+            <div class="outbox_info">
+                <div class="bg_left"></div>
+                <div class="bg_right"></div>
+                <div class="area">
+                    <!--주소 및 저작권안내 start-->
+                    <article class="info">
+                        <h2 class="hide">주소 및 저작권안내</h2>
+                        <!--
+				<span id="ss_img_wrapper_110-55_en"><a href="https://www.ucert.co.kr/trustlogo/seal_globalsign.html?sealnum=aba4d46536c00626" target="_blank"><img alt="Globalsign SSL Site Seal" border="0" id="ss_img" src="https://www.ucert.co.kr/image/trustlogo/gs_noscript_110-55_en.gif"></a></span>
+				<script src="//seal.globalsign.com/SiteSeal/gs_flash_110-55_en.js"></script>
+				-->
+                        <div>
+                            <dl>
+                                <dt>주소:</dt>
+                                <dd>서울특별시 송파구 위례성대로 14</dd>
+                            </dl>
+                            <dl>
+                                <dt>대표번호:</dt>
+                                <dd>02-410-9114</dd>
+                            </dl>
+                            <dl>
+                                <dt>소비자상담실:</dt>
+                                <dd>080-916-9000</dd>
+                            </dl>
+                            <dl>
+                                <dt>투자문의:</dt>
+                                <dd>02-410-0404 (한미약품, 한미사이언스), 0466 (JVM)</dd>
+                            </dl>
+                            <p style="clear:both">&copy;Hanmi Pharm.Co.,Ltd. <span>All Rights Reserved.</span></p>
+                            <p class="ssl_txt"><a
+                                    href="https://www.ucert.co.kr/trustlogo/seal_globalsign.html?sealnum=aba4d46536c00626"
+                                    target="_blank">[SSL 보안프로그램 적용]</a> 한미약품은 더욱 안심하고 신뢰할 수 있는 서비스를 제공하기 위해 최선을 다하고
+                                있습니다.</p>
+                        </div>
+                    </article>
+                    <!--//주소 및 저작권안내 end-->
+                    <!--주가정보 start-->
+                    <div class="stock"><iframe src="https://ir.gsifn.io/hanmi/ir3_main.html?koreng=1"
+                            title="주가정보"></iframe></div>
+                    <!--<article class="stock">
+				<h2>주식시세<span>(2014/10/16 10:52:02)</span></h2>
+				<span><strong>86,900</strong>▲700(+0.82%)</span></article>
+			--><!--//주가정보 end-->
+                </div>
+            </div>
+            <!--//☆☆☆☆☆FOOTER INFO end☆☆☆☆☆-->
+            <script src="../js/footer.js?ver=171215_5"></script>
+            <!-- AceCounter Log Gathering Script V.71.2010011401 -->
+            <script>
+                //if(typeof _GUL == 'undefined'){
+                //var _GUL = 'log.hanmi.co.kr';var _GPT='80'; var _SGPT='443';var _AIMG = new Image(); var _bn=navigator.appName; var _PR = location.protocol=="https:"?"https://"+_GUL+":"+_SGPT:"http://"+_GUL+":"+_GPT;if( _bn.indexOf("Netscape") > -1 || _bn=="Mozilla"){ setTimeout("_AIMG.src = _PR+'/?cookie';",1); } else{ _AIMG.src = _PR+'/?cookie'; };
+                //document.writeln("<scr"+"ipt src='../acecounter/acecounter_V70.js'></scr"+"ipt>");
+                //}
+            </script>
+            <!-- AceCounter Log Gathering Script End -->
+
+            <!--    Google Analytics Script start -->
+            <script>
+                (function (i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-84557259-6', 'auto');
+                ga('send', 'pageview');
+            </script>
+            <!-- Google Analytics Script end -->
+            <!-- <noscript><img src="http://log.hanmi.co.kr:80/?uid=1&je=n&" alt=""></noscript> -->
+
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147085607-2"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'UA-147085607-2');
+            </script>
+        </footer>
+
+        <!-- Chatbot Start -->
+        <!--
+<div class="chatbot_wrap">
+	<div class="bnt_box">
+		<a href="#"  title="챗봇 새창 열기">
+			<span class="ara"><img src="/hanmi/img/comm/chatbot_ara.gif" alt="아라챗봇"><span class="beta"><img src="/hanmi/img/comm/chatbot_ico_beta.png" alt="Beta"></span><span class="notice"><img src="../img/comm/chatbot_ara_notice.png" alt="내 주변 약사상담 오픈"></span></span>
+			<span class="tx">안녕하세요. 챗봇 아라입니다.  무엇을 도와드릴까요?</span>
+			<span class="ico"><img src="/hanmi/img/comm/chatbot_arrow.png" alt=""></span>
+		</a>
+	</div>
+	<div class="iframe_box">
+		<div>
+			<iframe src="https://ara.hanmi.co.kr/ara.do"></iframe>
+			<button type="button"><span class="ir_pm">창 닫기</span></button>
+		</div>
+	</div>
+</div>
+-->
+        <!-- //Chatbot End -->
+
+        <script>
+            $(window).ready(function () {
+                if ($("ul").hasClass("tab")) {
+                    var tabNum = $(".tab li.on").index();
+                    var tabNumX = tabNum * 90;
+                    var _scrollX = $(".tab").scrollLeft();
+                    $(".tab").scrollLeft(_scrollX + tabNumX);
+                }
+            });
+        </script>
+
+        <!--//★★★★★★★★★★★★★★★★★★★★FOOTER end★★★★★★★★★★★★★★★★★★★★-->
+    </div>
+</body>
+
+</html>
